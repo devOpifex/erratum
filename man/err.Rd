@@ -2,17 +2,29 @@
 % Please edit documentation in R/err.R
 \name{err}
 \alias{err}
+\alias{error}
+\alias{error.character}
+\alias{error.error}
+\alias{warn}
+\alias{warn.character}
+\alias{warn.warning}
 \title{Error & Warnings}
 \usage{
-err(error, ..., type = c("error", "warning"))
+error(error)
+
+\method{error}{character}(error)
+
+\method{error}{error}(error)
+
+warn(warning)
+
+\method{warn}{character}(warning)
+
+\method{warn}{warning}(warning)
 }
 \arguments{
-\item{error}{Message string, object of class \code{error},
+\item{error, warning}{Message string, object of class \code{error},
 or \code{warning}.}
-
-\item{...}{Ignored.}
-
-\item{type}{Type of the message \code{error} or \code{warning}.}
 }
 \description{
 Create new errors and warnings.

@@ -21,27 +21,31 @@ remotes::install_github("devOpifex/err")
 ``` r
 library(err)
 
-err <- err("Something went wrong")
+err <- error("Something went wrong")
 
 foo <- function(x){
-  err
-}
-
-bar <- function(x){
   if(is.character(x))
     return(err)
 
   log(x)
 }
 
-baz <- function(x){
-  tryCatch(log(x), error = function(e) err(e))
+bar <- function(x){
+  tryCatch(
+    log(x), 
+    error = function(e) error(e),
+    warning = function(w) warn(w)
+  )
 }
 
-foo()
+baz <- function(x){
+  warn("Careful something's off")
+}
+
+foo("a")
 #> ✖ Something went wrong
 bar("a")
-#> ✖ Something went wrong
-baz("b")
 #> ✖ non-numeric argument to mathematical function
+baz()
+#> ! Careful something's off
 ```
