@@ -8,24 +8,24 @@
 #' @param type Type of the message `error` or `warning`. 
 #'
 #' @export
-new <- function(error, ..., type = c("error", "warning")) UseMethod("new")
+err <- function(error, ..., type = c("error", "warning")) UseMethod("new")
 
 #' @export 
-new.character <- function(error, ..., type = c("error", "warning")){
+err.character <- function(error, ..., type = c("error", "warning")){
   stopifnot(!missing(error))
   construct_error(error, type)
 }
 
-#' @method new error
+#' @method err error
 #' @export 
-new.error <- function(error, ...){
+err.error <- function(error, ...){
   stopifnot(!missing(error))
   construct_error(error$message, "error")
 }
 
-#' @method new warning
+#' @method err warning
 #' @export 
-new.warning <- function(error, ...){
+err.warning <- function(error, ...){
   stopifnot(!missing(error))
   construct_error(error$message, "warning")
 }
