@@ -28,7 +28,7 @@ Issue <- R6::R6Class(
     msg = "",
     type = "error",
     getMessage = function(){
-      return(private$.msg)
+      return(private$msg)
     }
   )
 )

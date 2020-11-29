@@ -56,9 +56,9 @@ err <- e("Argh")
 war <- w("Careful")
 
 err$error()
-#> NULL
+#> [1] "Argh"
 war$warning()
-#> NULL
+#> [1] "Careful"
 ```
 
 One can check whether the object returned is an error or a warning.
