@@ -61,9 +61,9 @@ e("Sumin' went wrong")
 You can also retrieve the message of the error or warning.
 
 ```{r}
-war <- w("Careful")
+warn <- w("Careful")
 
-(string <- war$message())
+(string <- warn$message())
 
 class(string)
 ```

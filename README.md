@@ -37,7 +37,7 @@ foo <- function(...){
 }
 
 foo(log("a"))
-#> ERROR non-numeric argument to mathematical function
+#> Whoops: non-numeric argument to mathematical function - sorry!
 foo(matrix(1:3, nrow = 2))
 #> WARNING data length [3] is not a sub-multiple or multiple of the number of rows [2]
 ```
@@ -54,9 +54,9 @@ e("Sumin' went wrong")
 You can also retrieve the message of the error or warning.
 
 ``` r
-war <- w("Careful")
+warn <- w("Careful")
 
-(string <- war$message())
+(string <- warn$message())
 #> [1] "Careful"
 
 class(string)
