@@ -1,0 +1,21 @@
+Package: err
+Title: Handle Error and Warning Messages
+Version: 0.0.1
+Authors@R: 
+  c(
+    person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "john@opifex.org"),
+    person(family = "Opifex",
+           role = c("cph"),
+           email = "john@opifex.org")
+  )
+Description: Elegantly handle error and warning messages.
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1.9000
+Imports: 
+    cli
