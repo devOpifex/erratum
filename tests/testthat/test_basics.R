@@ -2,6 +2,10 @@ test_that("Basics", {
   error <- e("Problem")
   warning <- w("Caution")
 
+  # print
+  error
+  warning
+
   testthat::expect_s3_class(error, "Error")
   testthat::expect_s3_class(warning, "Warning")
 

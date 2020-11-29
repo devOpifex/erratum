@@ -32,10 +32,7 @@ Issue <- R6::R6Class(
   ),
   private = list(
     msg = "",
-    type = "error",
-    getMessage = function(){
-      return(private$msg)
-    }
+    type = "error"
   )
 )
 
