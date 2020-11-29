@@ -14,7 +14,7 @@ Error
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-error}{\code{Error$error()}}
+\item \href{#method-stop}{\code{Error$stop()}}
 \item \href{#method-clone}{\code{Error$clone()}}
 }
 }
@@ -22,20 +22,23 @@ Error
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="initialize">}\href{../../err/html/Issue.html#method-initialize}{\code{err::Issue$initialize()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="message">}\href{../../err/html/Issue.html#method-message}{\code{err::Issue$message()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="print">}\href{../../err/html/Issue.html#method-print}{\code{err::Issue$print()}}\out{</span>}
 }
 \out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-error"></a>}}
-\if{latex}{\out{\hypertarget{method-error}{}}}
-\subsection{Method \code{error()}}{
+\if{html}{\out{<a id="method-stop"></a>}}
+\if{latex}{\out{\hypertarget{method-stop}{}}}
+\subsection{Method \code{stop()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Error$error()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Error$stop()}\if{html}{\out{</div>}}
 }
 
 \subsection{Details}{
-Display the error message
+Stop
+
+Analogous to \code{\link[=stop]{stop()}}
 }
 
 }

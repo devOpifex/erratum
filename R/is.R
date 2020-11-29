@@ -19,5 +19,9 @@ is.e <- function(e){
 #' @rdname checks
 #' @export 
 is.w <- function(w){
-  inherits(e, "Warning")
+  inherits(w, "Warning")
+}
+
+is.err <- function(obj){
+  is.e(obj) || is.w(obj)
 }

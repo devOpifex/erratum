@@ -15,6 +15,12 @@ Issue <- R6::R6Class(
       private$msg <- extract(obj)
       private$type <- match.arg(type)
     },
+#' @details Message
+#' 
+#' Retrieve the message
+    message = function(){
+      private$msg
+    },
 #' @details Print
 #' 
 #' Print message of error or warning.

@@ -5,9 +5,11 @@ Error <- R6::R6Class(
   "Error",
   inherit = Issue,
   public = list(
-#' @details Display the error message
-    error = function(){
-      super$getMessage()
+#' @details Stop
+#' 
+#' Analogous to [stop()]
+    stop = function(){
+      stop(self$message(), call. = FALSE)
     }
   )
 )

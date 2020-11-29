@@ -14,7 +14,7 @@ Error
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-warning}{\code{Warning$warning()}}
+\item \href{#method-warn}{\code{Warning$warn()}}
 \item \href{#method-clone}{\code{Warning$clone()}}
 }
 }
@@ -22,20 +22,23 @@ Error
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="initialize">}\href{../../err/html/Issue.html#method-initialize}{\code{err::Issue$initialize()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="message">}\href{../../err/html/Issue.html#method-message}{\code{err::Issue$message()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="print">}\href{../../err/html/Issue.html#method-print}{\code{err::Issue$print()}}\out{</span>}
 }
 \out{</details>}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-warning"></a>}}
-\if{latex}{\out{\hypertarget{method-warning}{}}}
-\subsection{Method \code{warning()}}{
+\if{html}{\out{<a id="method-warn"></a>}}
+\if{latex}{\out{\hypertarget{method-warn}{}}}
+\subsection{Method \code{warn()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Warning$warning()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Warning$warn()}\if{html}{\out{</div>}}
 }
 
 \subsection{Details}{
-Display the warning message
+Stop
+
+Analogous to \code{\link[=stop]{stop()}}
 }
 
 }

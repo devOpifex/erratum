@@ -10,6 +10,7 @@ Core class to create and handle issues.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{Issue$new()}}
+\item \href{#method-message}{\code{Issue$message()}}
 \item \href{#method-print}{\code{Issue$print()}}
 \item \href{#method-clone}{\code{Issue$clone()}}
 }
@@ -34,6 +35,21 @@ class \code{error}, or \code{warning}.}
 }
 \subsection{Details}{
 Initialise
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-message"></a>}}
+\if{latex}{\out{\hypertarget{method-message}{}}}
+\subsection{Method \code{message()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Issue$message()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Message
+
+Retrieve the message
 }
 
 }
