@@ -37,18 +37,34 @@ foo <- function(...){
 }
 
 foo(log("a"))
-#> Whoops: non-numeric argument to mathematical function - sorry!
+#> non-numeric argument to mathematical function
 foo(matrix(1:3, nrow = 2))
-#> WARNING data length [3] is not a sub-multiple or multiple of the number of rows [2]
+#> data length [3] is not a sub-multiple or multiple of the number of rows [2]
 ```
 
 Templates that are used to print errors and warnings can be customised.
+Make sure it includes `%s`: the warning or error message.
 
 ``` r
-tmpl.e("Whoops: %s - sorry!")
+template.e("Whoops: %s - sorry!")
 
 e("Sumin' went wrong")
 #> Whoops: Sumin' went wrong - sorry!
+```
+
+Note that it supports [crayon](http://github.com/r-lib/crayon).
+
+``` r
+template.e(crayon::red("%s"))
+
+e("Sumin' went wrong")
+#> Sumin' went wrong
+```
+
+These can be reset by simply rerun the respective template function.
+
+``` r
+template.e()
 ```
 
 You can also retrieve the message of the error or warning.

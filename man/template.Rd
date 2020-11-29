@@ -2,13 +2,13 @@
 % Please edit documentation in R/template.R
 \name{template}
 \alias{template}
-\alias{tmpl.e}
-\alias{tmpl.w}
+\alias{template.e}
+\alias{template.w}
 \title{Templates}
 \usage{
-tmpl.e(pat)
+template.e(pat = "\%s")
 
-tmpl.w(pat)
+template.w(pat = "\%s")
 }
 \arguments{
 \item{pat}{Pattern to use, must include \verb{\%s},
@@ -24,7 +24,7 @@ msg <- "Something's wrong"
 e(msg)
 
 # template
-tmpl.e("Whoops: \%s - sorry!")
+template.e("Whoops: \%s - sorry!")
 e(msg)
 
 

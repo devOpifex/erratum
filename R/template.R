@@ -12,14 +12,13 @@
 #' e(msg)
 #' 
 #' # template
-#' tmpl.e("Whoops: %s - sorry!")
+#' template.e("Whoops: %s - sorry!")
 #' e(msg)
 #' 
 #' 
 #' @name template
 #' @export
-tmpl.e <- function(pat){
-  stopifnot(!missing(pat))
+template.e <- function(pat = "%s"){
   check_tmpl(pat)
   options("ERR_TEMPLATE_ERROR" = pat)
   invisible()
@@ -27,8 +26,7 @@ tmpl.e <- function(pat){
 
 #' @rdname template
 #' @export
-tmpl.w <- function(pat){
-  stopifnot(!missing(pat))
+template.w <- function(pat = "%s"){
   check_tmpl(pat)
   options("ERR_TEMPLATE_WARNING" = pat)
   invisible()
@@ -37,12 +35,10 @@ tmpl.w <- function(pat){
 tmpl <- function(type = c("error", "warning")){
   type <- match.arg(type)
   opt <- sprintf("ERR_TEMPLATE_%s", toupper(type))
-  getOption(opt, default_tmpl(type))
+  getOption(opt, default_tmpl)
 }
 
-default_tmpl <- function(type){
-  sprintf("%s %%s\n", toupper(type))
-}
+default_tmpl <- "%s"
 
 check_tmpl <- function(pat){
   correct <- grepl("\\%s", pat)
