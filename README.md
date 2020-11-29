@@ -39,6 +39,9 @@ baz <- function(x){
 }
 
 foo()
+#> ✖ Something went wrong
 bar("a")
+#> ✖ Something went wrong
 baz("b")
+#> ✖ non-numeric argument to mathematical function
 ```

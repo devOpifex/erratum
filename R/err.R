@@ -8,7 +8,7 @@
 #' @param type Type of the message `error` or `warning`. 
 #'
 #' @export
-err <- function(error, ..., type = c("error", "warning")) UseMethod("new")
+err <- function(error, ..., type = c("error", "warning")) UseMethod("err")
 
 #' @export 
 err.character <- function(error, ..., type = c("error", "warning")){

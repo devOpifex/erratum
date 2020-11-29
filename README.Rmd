@@ -31,7 +31,7 @@ remotes::install_github("devOpifex/err")
 
 ## Example
 
-``` r
+```{r}
 library(err)
 
 err <- err("Something went wrong")
