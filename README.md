@@ -7,7 +7,7 @@
 
 # err
 
-Error handling for R
+Error handling for R, inspired by Go’s standard library.
 
 ## Installation
 
@@ -16,36 +16,56 @@ Error handling for R
 remotes::install_github("devOpifex/err")
 ```
 
-## Example
+## Examples
+
+Errors and warning can either be created from strings or warning and
+error objects.
 
 ``` r
 library(err)
 
-err <- error("Something went wrong")
+err <- e("Something went wrong")
 
-foo <- function(x){
-  if(is.character(x))
-    return(err)
-
-  log(x)
-}
-
-bar <- function(x){
+foo <- function(...){
   tryCatch(
-    log(x), 
-    error = function(e) error(e),
-    warning = function(w) warn(w)
+    ..., 
+    error = function(err) e(err), 
+    warning = function(war) w(war) 
   )
 }
 
-baz <- function(x){
-  warn("Careful something's off")
-}
+foo(log("a"))
+#> ERROR non-numeric argument to mathematical function
+foo(matrix(1:3, nrow = 2))
+#> WARNING data length [3] is not a sub-multiple or multiple of the number of rows [2]
+```
 
-foo("a")
-#> ✖ Something went wrong
-bar("a")
-#> ✖ non-numeric argument to mathematical function
-baz()
-#> ! Careful something's off
+Templates that are used to print errors and warnings can be customised.
+
+``` r
+tmpl.e("Whoops: %s - sorry!")
+
+e("Sumin' went wrong")
+#> Whoops: Sumin' went wrong - sorry!
+```
+
+You can also retrieve the message of the error or warning.
+
+``` r
+err <- e("Argh")
+war <- w("Careful")
+
+err$error()
+#> NULL
+war$warning()
+#> NULL
+```
+
+One can check whether the object returned is an error or a warning.
+
+``` r
+x <- tryCatch(print(error), error = function(err) e(err))
+
+is.e(x)
+#> [1] TRUE
 ```
