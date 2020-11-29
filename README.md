@@ -54,13 +54,13 @@ e("Sumin' went wrong")
 You can also retrieve the message of the error or warning.
 
 ``` r
-err <- e("Argh")
 war <- w("Careful")
 
-err$error()
-#> [1] "Argh"
-war$warning()
+(string <- war$message())
 #> [1] "Careful"
+
+class(string)
+#> [1] "character"
 ```
 
 One can check whether the object returned is an error or a warning.
@@ -70,4 +70,54 @@ x <- tryCatch(print(error), error = function(err) e(err))
 
 is.e(x)
 #> [1] TRUE
+```
+
+The function `jab` is analogous to `tryCatch` but will use `err`
+internally. It also allows passing `e` and `w` along to easily reuse
+error messages.
+
+``` r
+safe_log <- function(x){
+ result <- jab(log(x))
+ 
+ if(is.e(result))
+   stop(result$message())
+
+ return(result)
+} 
+
+safe_log("a")
+#> Error in safe_log("a"): non-numeric argument to mathematical function
+```
+
+Instead of checking the results of `tryCatch` with an `if` statement,
+one might want to use `enforce` which will check whether the result is
+an error or a warning and deal with it accordingly (`stop` or
+`warning`).
+
+``` r
+err <- e("Log only accepts numeric(s)")
+
+safe_log <- function(x){
+ result <- jab(log(x), e = err)
+ enforce(result)
+
+ return(result)
+} 
+
+safe_log("a")
+#> Error: Log only accepts numeric(s)
+```
+
+The `enforce` function accepts multiple objects, note that these are
+evaluated in order.
+
+``` r
+x <- "just a string"
+www <- w("Caution")
+err <- e("Broken!")
+
+enforce(x, www, err)
+#> Warning: Caution
+#> Error: Broken!
 ```

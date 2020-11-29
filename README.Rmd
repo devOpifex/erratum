@@ -108,7 +108,7 @@ safe_log("a")
 
 The `enforce` function accepts multiple objects, note that these are evaluated in order.
 
-```{r, error=FALSE}
+```{r, error=TRUE}
 x <- "just a string"
 www <- w("Caution")
 err <- e("Broken!")
