@@ -9,7 +9,7 @@ Warning <- R6::R6Class(
 #' 
 #' Analogous to [stop()]
     warn = function(){
-      stop(self$message(), call. = FALSE)
+      warning(self$message(), call. = FALSE)
     }
   )
 )
