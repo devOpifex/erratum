@@ -7,7 +7,9 @@
 
 # err
 
-Error handling for R, inspired by Go’s standard library.
+Error handling for R, inspired by Go’s standard library; it makes it
+easier to standardise and handle error messages, doing so also forces
+the developer to think about errors rather than let them happen.
 
 ## Installation
 
