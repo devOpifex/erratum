@@ -20,6 +20,16 @@ enforce <- function(...) {
   invisible()
 }
 
+#' Check
+#' 
+#' Checks individual objects.
+#' 
+#' @param obj Object to check.
+#' 
+#' @details Runs [warning()] or [stop()] where necessary.
+#' 
+#' @noRd 
+#' @keywords internal
 check <- function(obj){
   if(is.e(obj))
     stop(obj$message(), call. = FALSE)

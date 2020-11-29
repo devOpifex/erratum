@@ -28,6 +28,14 @@ jab <- function(expr, e = NULL, w = NULL){
   )
 }
 
+#' Create Callbacks for jab
+#' 
+#' Creates callback for [jab()].
+#' 
+#' @name callbacks
+#' 
+#' @noRd 
+#' @keywords internal
 callback_e <- function(e = NULL){
   return(
     function(err){
@@ -39,6 +47,9 @@ callback_e <- function(e = NULL){
   )
 }
 
+#' @rdname callbacks
+#' @noRd 
+#' @keywords internal
 callback_w <- function(w = NULL){
   return(
     function(war){

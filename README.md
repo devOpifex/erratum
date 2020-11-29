@@ -3,6 +3,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
 <!-- badges: end -->
 
 # err
