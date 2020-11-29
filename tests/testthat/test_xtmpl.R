@@ -3,4 +3,11 @@ test_that("Template", {
 
   template.e("whoops %s")
   template.w("careful %s")
+
+  err <- e("Argh")
+  war <- w("Careful")
+
+  # print
+  err
+  war
 })
