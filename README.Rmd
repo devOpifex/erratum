@@ -145,6 +145,22 @@ enforce(x, www, err)
 enforce(x)
 ```
 
+You can also use `defer_enforce` to defer the enforce when the function exits.
+
+```{r, error=TRUE}
+safe_log <- function(x){
+ result <- jab(log(x), e = e("Gah!"))
+ defer_enforce(result)
+
+ print("Doing something here")
+
+ return(result)
+} 
+
+safe_log(10)
+safe_log("a")
+```
+
 ### Latch
 
 Errors and warnings can also be latched onto objects so they can be dealt with later, functions such as `is.e` or `enforce` will also work on those objects.

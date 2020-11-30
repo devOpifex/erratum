@@ -5,7 +5,8 @@
 #' is called.
 #' 
 #' @details Objects passed are evalutated in order.
-#'
+#' 
+#' @name enforece
 #' @export 
 enforce <- function(...) {
   # there may be no need to check
@@ -18,6 +19,15 @@ enforce <- function(...) {
   # check objects
   lapply(list(...), chk)
   invisible()
+}
+
+#' @name enforece
+#' @export 
+defer_enforce <- function(...){
+  do.call(
+    on.exit, list(substitute(enforce(...)), add = TRUE),
+    envir = parent.frame() 
+  )
 }
 
 #' Check
