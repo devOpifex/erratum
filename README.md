@@ -65,7 +65,7 @@ e("Sumin' went wrong")
 #> Sumin' went wrong
 ```
 
-These can be reset by simply rerun the respective template function.
+These can be reset by simply reruning the respective template function.
 
 ``` r
 template.e()
