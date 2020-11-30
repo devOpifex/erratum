@@ -3,15 +3,27 @@
 \name{checks}
 \alias{checks}
 \alias{is.e}
+\alias{is.e.default}
+\alias{is.e.err}
 \alias{is.w}
+\alias{is.w.default}
+\alias{is.w.err}
 \title{Check}
 \usage{
-is.e(e)
+is.e(obj)
 
-is.w(w)
+\method{is.e}{default}(obj)
+
+\method{is.e}{err}(obj)
+
+is.w(obj)
+
+\method{is.w}{default}(obj)
+
+\method{is.w}{err}(obj)
 }
 \arguments{
-\item{e, w}{Object to check.}
+\item{obj}{Object to check.}
 }
 \description{
 Check whether an object is an error or a warning.

@@ -10,6 +10,12 @@ Error <- R6::R6Class(
 #' Analogous to [stop()]
     stop = function(){
       stop(self$message(), call. = FALSE)
+    },
+#' @details Fatal
+#' 
+#' Analogous to [stop()]
+    fatal = function(){
+      stop(self$message(), call. = FALSE)
     }
   )
 )

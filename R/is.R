@@ -2,7 +2,7 @@
 #' 
 #' Check whether an object is an error or a warning.
 #' 
-#' @param e,w Object to check.
+#' @param obj Object to check.
 #' 
 #' @examples 
 #' err <- e("Whoops!")
@@ -12,14 +12,36 @@
 #' 
 #' @name checks
 #' @export 
-is.e <- function(e){
-  inherits(e, "Error")
+is.e <- function(obj) UseMethod("is.e")
+
+#' @rdname checks
+#' @export
+is.e.default <- function(obj){
+  inherits(obj, "Error")
+}
+
+#' @method is.e err
+#' @rdname checks
+#' @export
+is.e.err <- function(obj){
+  is.e(get_attr_e(obj))
 }
 
 #' @rdname checks
 #' @export 
-is.w <- function(w){
-  inherits(w, "Warning")
+is.w <- function(obj) UseMethod("is.w")
+
+#' @rdname checks
+#' @export 
+is.w.default <- function(obj){
+  inherits(obj, "Warning")
+}
+
+#' @method is.w err
+#' @rdname checks
+#' @export
+is.w.err <- function(obj){
+  is.w(get_attr_w(obj))
 }
 
 is.err <- function(obj){

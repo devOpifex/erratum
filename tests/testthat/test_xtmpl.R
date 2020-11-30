@@ -7,7 +7,9 @@ test_that("Template", {
   err <- e("Argh")
   war <- w("Careful")
 
-  # print
-  err
-  war
+  testthat::expect_snapshot_output(err)
+  testthat::expect_snapshot_output(war)
+
+  template.e()
+  template.w()
 })

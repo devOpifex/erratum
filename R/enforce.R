@@ -16,7 +16,7 @@ enforce <- function(...) {
     return(invisible())
 
   # check objects
-  lapply(list(...), check)
+  lapply(list(...), chk)
   invisible()
 }
 
@@ -28,14 +28,32 @@ enforce <- function(...) {
 #' 
 #' @details Runs [warning()] or [stop()] where necessary.
 #' 
-#' @noRd 
-#' @keywords internal
-check <- function(obj){
+#' @name chk
+#' @export 
+chk <- function(obj) UseMethod("chk")
+
+#' @export 
+#' @rdname chk
+#' @method chk default
+chk.default <- function(obj){
   if(is.e(obj))
-    stop(obj$message(), call. = FALSE)
+    obj$fatal()
   
   if(is.w(obj))
-    warning(obj$message(), call. = FALSE)
+    obj$warn()
+  
+  invisible()
+}
+
+#' @export 
+#' @rdname chk
+#' @method chk err
+chk.err <- function(obj){
+  if(is.e(obj))
+    get_attr_e(obj)$fatal()
+  
+  if(is.w(obj))
+    get_attr_w(obj)$warn()
   
   invisible()
 }

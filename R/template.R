@@ -15,6 +15,8 @@
 #' template.e("Whoops: %s - sorry!")
 #' e(msg)
 #' 
+#' # reset
+#' template.e()
 #' 
 #' @name template
 #' @export

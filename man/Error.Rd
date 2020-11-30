@@ -15,6 +15,7 @@ Error
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-stop}{\code{Error$stop()}}
+\item \href{#method-fatal}{\code{Error$fatal()}}
 \item \href{#method-clone}{\code{Error$clone()}}
 }
 }
@@ -37,6 +38,21 @@ Error
 
 \subsection{Details}{
 Stop
+
+Analogous to \code{\link[=stop]{stop()}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-fatal"></a>}}
+\if{latex}{\out{\hypertarget{method-fatal}{}}}
+\subsection{Method \code{fatal()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Error$fatal()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Fatal
 
 Analogous to \code{\link[=stop]{stop()}}
 }
