@@ -43,7 +43,7 @@ err <- e("Something went wrong")
 foo <- function(...){
   tryCatch(
     ..., 
-    error = function(err) e(err), 
+    error = function(err) err, 
     warning = function(war) w(war) 
   )
 }
