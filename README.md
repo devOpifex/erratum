@@ -35,13 +35,13 @@ err <- e("Something went wrong")
 foo <- function(...){
   tryCatch(
     ..., 
-    error = function(err) err, 
+    error = function(e) err, 
     warning = function(war) w(war) 
   )
 }
 
 foo(log("a"))
-#> <simpleError in log("a"): non-numeric argument to mathematical function>
+#> Something went wrong
 foo(matrix(1:3, nrow = 2))
 #> data length [3] is not a sub-multiple or multiple of the number of rows [2]
 ```
