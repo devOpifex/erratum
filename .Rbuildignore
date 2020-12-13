@@ -1,3 +1,5 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^\.travis\.yml$
+test.R
+^cran-comments\.md$
