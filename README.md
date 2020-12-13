@@ -6,7 +6,7 @@
 [![Travis build
 status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
 [![Coveralls test
-coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/r/devOpifex/err?branch=master)
+coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/github/devOpifex/err)
 <!-- badges: end -->
 
 # err
@@ -60,7 +60,7 @@ e("Sumin' went wrong")
 #> Whoops: Sumin' went wrong - sorry!
 ```
 
-Note that it supports [crayon](http://github.com/r-lib/crayon).
+Note that it supports [crayon](https://github.com/r-lib/crayon).
 
 ``` r
 template.e(crayon::red("%s"))

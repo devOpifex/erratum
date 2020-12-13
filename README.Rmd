@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
-[![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/r/devOpifex/err?branch=master)
+[![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/github/devOpifex/err)
 <!-- badges: end -->
 
 # err
@@ -64,7 +64,7 @@ template.e("Whoops: %s - sorry!")
 e("Sumin' went wrong")
 ```
 
-Note that it supports [crayon](http://github.com/r-lib/crayon).
+Note that it supports [crayon](https://github.com/r-lib/crayon).
 
 ```{r}
 template.e(crayon::red("%s"))
