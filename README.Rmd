@@ -16,11 +16,11 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
-[![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/github/devOpifex/err)
+[![Travis build status](https://travis-ci.com/devOpifex/erratum.svg?branch=master)](https://travis-ci.com/devOpifex/erratum)
+[![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
-# err
+# erratum
 
 Software should fail loudly and early.
 
@@ -30,7 +30,7 @@ Error handling for R, inspired by Go's standard library; it makes it easier to s
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/err")
+remotes::install_github("devOpifex/erratum")
 ```
 
 ## Examples
@@ -38,7 +38,7 @@ remotes::install_github("devOpifex/err")
 Errors and warning can either be created from strings or warning and error objects.
 
 ```{r}
-library(err)
+library(erratum)
 
 err <- e("Something went wrong")
 

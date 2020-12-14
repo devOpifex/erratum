@@ -4,12 +4,12 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
+status](https://travis-ci.com/devOpifex/erratum.svg?branch=master)](https://travis-ci.com/devOpifex/erratum)
 [![Coveralls test
-coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/github/devOpifex/err)
+coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
-# err
+# erratum
 
 Software should fail loudly and early.
 
@@ -21,7 +21,7 @@ Doing so forces the developer to deal with potential errors.
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("devOpifex/err")
+remotes::install_github("devOpifex/erratum")
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ Errors and warning can either be created from strings or warning and
 error objects.
 
 ``` r
-library(err)
+library(erratum)
 
 err <- e("Something went wrong")
 

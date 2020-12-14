@@ -1,4 +1,4 @@
-Package: err
+Package: erratum
 Title: Handle Error and Warning Messages
 Version: 1.0.1
 Authors@R: 

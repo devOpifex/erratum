@@ -9,7 +9,7 @@ Error
 Error
 }
 \section{Super class}{
-\code{\link[err:Issue]{err::Issue}} -> \code{Warning}
+\code{\link[erratum:Issue]{erratum::Issue}} -> \code{Warning}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -21,9 +21,9 @@ Error
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
-\item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="initialize">}\href{../../err/html/Issue.html#method-initialize}{\code{err::Issue$initialize()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="message">}\href{../../err/html/Issue.html#method-message}{\code{err::Issue$message()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="err" data-topic="Issue" data-id="print">}\href{../../err/html/Issue.html#method-print}{\code{err::Issue$print()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="initialize">}\href{../../erratum/html/Issue.html#method-initialize}{\code{erratum::Issue$initialize()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="message">}\href{../../erratum/html/Issue.html#method-message}{\code{erratum::Issue$message()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print">}\href{../../erratum/html/Issue.html#method-print}{\code{erratum::Issue$print()}}\out{</span>}
 }
 \out{</details>}
 }

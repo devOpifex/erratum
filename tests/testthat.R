@@ -1,4 +1,4 @@
 library(testthat)
-library(err)
+library(erratum)
 
-test_check("err")
+test_check("erratum")
