@@ -6,7 +6,7 @@
 [![Travis build
 status](https://travis-ci.com/devOpifex/err.svg?branch=master)](https://travis-ci.com/devOpifex/err)
 [![Coveralls test
-coverage](https://coveralls.io/repos/github/devOpifex/err/badge.svg)](https://coveralls.io/github/devOpifex/err)
+coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
 # erratum
