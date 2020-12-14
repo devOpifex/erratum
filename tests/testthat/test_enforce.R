@@ -7,7 +7,7 @@ test_that("Enforce", {
   enforce("Nothing to do")
 
   safe_log <- function(x){
-    rez <- jab(log(x), err = e("Argh!"))
+    rez <- jab(log(x), e = e("Argh!"))
     defer_enforce(rez)
     return(rez)
   }

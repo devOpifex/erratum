@@ -6,7 +6,7 @@
 #' 
 #' @details Objects passed are evalutated in order.
 #' 
-#' @name enforece
+#' @name enforces
 #' @export 
 enforce <- function(...) {
   # there may be no need to check
@@ -21,7 +21,7 @@ enforce <- function(...) {
   invisible()
 }
 
-#' @name enforece
+#' @name enforces
 #' @export 
 defer_enforce <- function(...){
   do.call(
