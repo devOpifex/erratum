@@ -1,17 +1,17 @@
 test_that("latch", {
 
-  testthat::expect_error(latche())
-  testthat::expect_error(latchw())
+  testthat::expect_error(latch.e())
+  testthat::expect_error(latch.w())
 
   x <- 1
 
-  testthat::expect_error(latche(x))
-  testthat::expect_error(latchw(x))
-  testthat::expect_error(latche(x, "error"))
-  testthat::expect_error(latchw(x, "warning"))
+  testthat::expect_error(latch.e(x))
+  testthat::expect_error(latch.w(x))
+  testthat::expect_error(latch.e(x, "error"))
+  testthat::expect_error(latch.w(x, "warning"))
 
-  le <- latche(x, e("Probematic"))
-  lw <- latchw(x, w("Suspicious"))
+  le <- latch.e(x, e("Probematic"))
+  lw <- latch.w(x, w("Suspicious"))
 
   testthat::expect_snapshot_output(le)
   testthat::expect_snapshot_output(lw)

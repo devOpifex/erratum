@@ -2,14 +2,14 @@
 % Please edit documentation in R/latch.R
 \name{latch}
 \alias{latch}
-\alias{latche}
-\alias{latchw}
+\alias{latch.e}
+\alias{latch.w}
 \alias{unlatch}
 \title{Latch an Error or a Warning}
 \usage{
-latche(obj, error)
+latch.e(obj, error)
 
-latchw(obj, warning)
+latch.w(obj, warning)
 
 unlatch(obj)
 }
@@ -36,7 +36,7 @@ and \code{\link[=is.w]{is.w()}}, and can also be \code{\link[=enforce]{enforce()
 
 \examples{
 x <- 1
-problematic <- latche(x, e("Not right"))
+problematic <- latch.e(x, e("Not right"))
 
 is.e(problematic)
 

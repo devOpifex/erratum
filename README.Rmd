@@ -169,7 +169,7 @@ You can use `unlatch` to resolve these.
 
 ```{r, error=TRUE}
 x <- 1
-problematic <- latche(x, e("Not right"))
+problematic <- latch.e(x, e("Not right"))
 
 is.e(problematic)
 

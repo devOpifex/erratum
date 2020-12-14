@@ -189,10 +189,11 @@ You can use `unlatch` to resolve these.
 
 ``` r
 x <- 1
-problematic <- latche(x, e("Not right"))
+problematic <- latch.e(x, e("Not right"))
+#> Error in latch.e(x, e("Not right")): could not find function "latch.e"
 
 is.e(problematic)
-#> [1] TRUE
+#> Error in is.e(problematic): object 'problematic' not found
 
 do_sth_with_x <- function(x){
  enforce(x)
@@ -202,8 +203,8 @@ do_sth_with_x <- function(x){
 do_sth_with_x(x)
 #> [1] 2
 do_sth_with_x(problematic)
-#> Error: Not right
+#> Error in lapply(list(...), is.err): object 'problematic' not found
 
 unlatch(problematic)
-#> [1] 1
+#> Error in unlatch(problematic): object 'problematic' not found
 ```

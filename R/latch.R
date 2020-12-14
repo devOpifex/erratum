@@ -16,7 +16,7 @@
 #' 
 #' @examples 
 #' x <- 1
-#' problematic <- latche(x, e("Not right"))
+#' problematic <- latch.e(x, e("Not right"))
 #' 
 #' is.e(problematic)
 #' 
@@ -34,7 +34,7 @@
 #' 
 #' @name latch
 #' @export
-latche <- function(obj, error){
+latch.e <- function(obj, error){
   missing_obj <- e("Missing `obj`")
   missing_error <- e("Missing `error`")
   
@@ -53,7 +53,7 @@ latche <- function(obj, error){
 
 #' @rdname latch
 #' @export
-latchw <- function(obj, warning){
+latch.w <- function(obj, warning){
   missing_obj <- e("Missing `obj`")
   missing_warning <- e("Missing `warning`")
   
