@@ -27,7 +27,15 @@ Issue <- R6::R6Class(
     print = function(){
       pattern <- tmpl(private$type)
       msg <- sprintf(pattern, private$msg)
-      cat(msg)
+      cat(msg, "\n")
+    },
+#' @details Return
+#' 
+#' Returns self from parent function.
+    return = function(){
+      assign("return.issue", self, envir = parent.frame())
+      call <- rlang::expr(return(return.issue)) 
+      rlang::eval_bare(call, env = parent.frame())
     }
   ),
   private = list(

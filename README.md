@@ -12,13 +12,13 @@ coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https:
 # erratum
 
 Sometimes one might want a more refined handling of errors in R. For
-instance, in shiny applications or Plumber applications where using
-`stop` crashes the service. Instead one might want to handle the error
-with more subtlety: erratum aims to enable this.
+instance, in shiny applications or Plumber APIs where using `stop`
+crashes the service. Instead one might want to handle the error with
+more subtlety: erratum aims to enable this.
 
-Error handling for R, inspired by Go’s standard library; it makes it
-easier to standardise and handle error messages as well as warnings.
-Doing so forces the developer to deal with potential errors.
+This inspired by Go’s standard library; it makes it easier to
+standardise and handle error messages as well as warnings. Doing so
+forces the developer to deal with potential errors.
 
 ## Installation
 
@@ -120,7 +120,9 @@ safe_log <- function(x){
 } 
 
 safe_log("a")
-#> Error in safe_log("a"): non-numeric argument to mathematical function
+#> function (err) 
+#> e(err)
+#> <environment: 0x6532120>
 ```
 
 ### Enforce
@@ -190,10 +192,9 @@ You can use `unlatch` to resolve these.
 ``` r
 x <- 1
 problematic <- latch.e(x, e("Not right"))
-#> Error in latch.e(x, e("Not right")): could not find function "latch.e"
 
 is.e(problematic)
-#> Error in is.e(problematic): object 'problematic' not found
+#> [1] TRUE
 
 do_sth_with_x <- function(x){
  enforce(x)
@@ -203,8 +204,8 @@ do_sth_with_x <- function(x){
 do_sth_with_x(x)
 #> [1] 2
 do_sth_with_x(problematic)
-#> Error in lapply(list(...), is.err): object 'problematic' not found
+#> Error: Not right
 
 unlatch(problematic)
-#> Error in unlatch(problematic): object 'problematic' not found
+#> [1] 1
 ```

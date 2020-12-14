@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Handling | erratum</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Error handling in R">
+    <meta name="theme-color" content="#D32F2F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.42ce39fe.css" as="style"><link rel="preload" href="/assets/js/app.346bf068.js" as="script"><link rel="preload" href="/assets/js/2.ae48d6c8.js" as="script"><link rel="preload" href="/assets/js/14.33bf0c81.js" as="script"><link rel="prefetch" href="/assets/js/10.154ba2a6.js"><link rel="prefetch" href="/assets/js/11.2a5bf159.js"><link rel="prefetch" href="/assets/js/12.7dae5e6e.js"><link rel="prefetch" href="/assets/js/13.51c3e15c.js"><link rel="prefetch" href="/assets/js/15.58e69739.js"><link rel="prefetch" href="/assets/js/16.330380df.js"><link rel="prefetch" href="/assets/js/3.a969e1d2.js"><link rel="prefetch" href="/assets/js/4.04458bdc.js"><link rel="prefetch" href="/assets/js/5.34b7d66a.js"><link rel="prefetch" href="/assets/js/6.2f08a0cb.js"><link rel="prefetch" href="/assets/js/7.a00e933e.js"><link rel="prefetch" href="/assets/js/8.6c69cba8.js"><link rel="prefetch" href="/assets/js/9.3112df6c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.42ce39fe.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">erratum</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/config/" class="nav-link">
+  Config
+</a></div><div class="nav-item"><a href="https://github.com/devOpifex/erratum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/config/" class="nav-link">
+  Config
+</a></div><div class="nav-item"><a href="https://github.com/devOpifex/erratum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li><li><a href="/guide/get-started.html" class="sidebar-link">Get Started</a></li><li><a href="/guide/handling.html" aria-current="page" class="active sidebar-link">Handling</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/handling.html#check" class="sidebar-link">Check</a></li><li class="sidebar-sub-header"><a href="/guide/handling.html#jab" class="sidebar-link">Jab</a></li><li class="sidebar-sub-header"><a href="/guide/handling.html#enforce" class="sidebar-link">Enforce</a></li><li class="sidebar-sub-header"><a href="/guide/handling.html#defer-enforce" class="sidebar-link">Defer Enforce</a></li><li class="sidebar-sub-header"><a href="/guide/handling.html#latch" class="sidebar-link">Latch</a></li></ul></li><li><a href="/guide/escalation.html" class="sidebar-link">Escalation</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="handling"><a href="#handling" class="header-anchor">#</a> Handling</h1> <p>The basics themselves only bring so much to error handling in R; they, however, enable a lot more.</p> <h2 id="check"><a href="#check" class="header-anchor">#</a> Check</h2> <p>One can check whether the object returned is an error or a warning with <code>is.e</code> and <code>is.w</code> respectively.</p> <div class="language-r extra-class"><pre class="language-r"><code>x <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;This is an error&quot;</span><span class="token punctuation">)</span>
+
+is.e<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[1] TRUE
+</code></pre></div><h2 id="jab"><a href="#jab" class="header-anchor">#</a> Jab</h2> <p>The function <code>jab</code> is analogous to <code>tryCatch</code> but will use <code>err</code>
+internally. It also allows passing <code>e</code> and <code>w</code> along to easily reuse
+error messages.</p> <div class="language-r extra-class"><pre class="language-r"><code>safe_log <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ result <span class="token operator">&lt;-</span> jab<span class="token punctuation">(</span>log<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+ <span class="token keyword">if</span><span class="token punctuation">(</span>is.e<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+   result<span class="token operator">$</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ return<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> 
+
+safe_log<span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error in safe_log(&quot;a&quot;): non-numeric argument to mathematical function
+</code></pre></div><h2 id="enforce"><a href="#enforce" class="header-anchor">#</a> Enforce</h2> <p>Instead of checking the results of <code>tryCatch</code> with an <code>if</code> statement, one might want to use <code>enforce</code> which will check whether the result is an error or a warning and deal with it accordingly (<code>stop</code> or <code>warning</code>).</p> <div class="language-r extra-class"><pre class="language-r"><code>err <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;Log only accepts numeric(s)&quot;</span><span class="token punctuation">)</span>
+
+safe_log <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ result <span class="token operator">&lt;-</span> jab<span class="token punctuation">(</span>log<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> e <span class="token operator">=</span> err<span class="token punctuation">)</span>
+ enforce<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+ return<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> 
+
+safe_log<span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error: Log only accepts numeric(s)
+</code></pre></div><p>The <code>enforce</code> function accepts multiple objects, note that these are
+evaluated in order.</p> <div class="language-r extra-class"><pre class="language-r"><code>x <span class="token operator">&lt;-</span> <span class="token string">&quot;just a string&quot;</span>
+www <span class="token operator">&lt;-</span> w<span class="token punctuation">(</span><span class="token string">&quot;Caution&quot;</span><span class="token punctuation">)</span>
+err <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;Broken!&quot;</span><span class="token punctuation">)</span>
+
+enforce<span class="token punctuation">(</span>x<span class="token punctuation">,</span> www<span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Warning: Caution
+Error: Broken!
+</code></pre></div><p>One can, of course, <code>enforce</code> objects that are not errors or warnings: nothing happens.</p> <div class="language-r extra-class"><pre class="language-r"><code>enforce<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre></div><h2 id="defer-enforce"><a href="#defer-enforce" class="header-anchor">#</a> Defer Enforce</h2> <p>You can also use <code>defer_enforce</code> to defer the enforce when the function
+exits.</p> <div class="language-r extra-class"><pre class="language-r"><code>safe_log <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ result <span class="token operator">&lt;-</span> jab<span class="token punctuation">(</span>log<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> e <span class="token operator">=</span> e<span class="token punctuation">(</span><span class="token string">&quot;Gah!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ defer_enforce<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+ print<span class="token punctuation">(</span><span class="token string">&quot;Doing something here&quot;</span><span class="token punctuation">)</span>
+
+ return<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> 
+
+safe_log<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[1] &quot;Doing something here&quot;
+#&gt; [1] 2.302585
+</code></pre></div><div class="language-r extra-class"><pre class="language-r"><code>safe_log<span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[1] &quot;Doing something here&quot;
+Error: Gah!
+</code></pre></div><h2 id="latch"><a href="#latch" class="header-anchor">#</a> Latch</h2> <p>Errors and warnings can also be latched onto objects so they can be
+dealt with later, functions such as <code>is.e</code> or <code>enforce</code> will also work on those objects.</p> <div class="language-r extra-class"><pre class="language-r"><code>x <span class="token operator">&lt;-</span> <span class="token number">1</span>
+problematic <span class="token operator">&lt;-</span> latch.e<span class="token punctuation">(</span>x<span class="token punctuation">,</span> e<span class="token punctuation">(</span><span class="token string">&quot;Not right&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+is.e<span class="token punctuation">(</span>problematic<span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[1] TRUE
+</code></pre></div><p>This allows escalating the error or warning so it can be dealt with later, e.g.: the problematic object created above with <code>latch.e</code> can be passed to another function where it raises an error.</p> <div class="language-r extra-class"><pre class="language-r"><code>do_sth_with_x <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ enforce<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+ x <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+do_sth_with_x<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[1] 2
+</code></pre></div><div class="language-r extra-class"><pre class="language-r"><code>do_sth_with_x<span class="token punctuation">(</span>problematic<span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error: Not right
+</code></pre></div><p>You can use <code>unlatch</code> to resolve these.</p> <div class="language-r extra-class"><pre class="language-r"><code>unlatch<span class="token punctuation">(</span>problematic<span class="token punctuation">)</span>
+</code></pre></div><div class="language-r extra-class"><pre class="language-r"><code><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>See the <a href="/guide/escalation">escalation</a> to understand why <code>enforce</code> is so useful</p></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/get-started.html" class="prev">
+        Get Started
+      </a></span> <span class="next"><a href="/guide/escalation.html">
+        Escalation
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.346bf068.js" defer></script><script src="/assets/js/2.ae48d6c8.js" defer></script><script src="/assets/js/14.33bf0c81.js" defer></script>
+  </body>
+</html>

@@ -12,6 +12,7 @@ Core class to create and handle issues.
 \item \href{#method-new}{\code{Issue$new()}}
 \item \href{#method-message}{\code{Issue$message()}}
 \item \href{#method-print}{\code{Issue$print()}}
+\item \href{#method-return}{\code{Issue$return()}}
 \item \href{#method-clone}{\code{Issue$clone()}}
 }
 }
@@ -65,6 +66,21 @@ Retrieve the message
 Print
 
 Print message of error or warning.
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-return"></a>}}
+\if{latex}{\out{\hypertarget{method-return}{}}}
+\subsection{Method \code{return()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Issue$return()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Return
+
+Returns self from parent function.
 }
 
 }

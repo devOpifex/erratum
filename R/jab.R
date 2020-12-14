@@ -11,7 +11,7 @@
 #'  result <- jab(log(x))
 #'  
 #'  if(is.e(result))
-#'    stop(result$message())
+#'    stop(result$stop())
 #' 
 #'  return(result)
 #' } 
