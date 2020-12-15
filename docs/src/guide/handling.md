@@ -163,6 +163,43 @@ unlatch(problematic)
 [1] 1
 ```
 
+## Skip
+
+The `skip` function is similar to enforce but instead of calling `stop` or `warning` it `return`s the error or warning object from the parent function. This is useful to escalate the error to the parent function.
+
+```r
+# foo always returns an error
+foo <- function(){
+  e("Problem!")
+}
+
+# bar calls foo
+bar <- function(){
+  x <- foo()
+  skip(x)
+  print("This should not print")
+  return(1)
+}
+
+# baz calls bar
+baz <- function(){
+  y <- bar()
+  enforce(y)
+  print("This should not print either")
+}
+
+baz()
+```
+
+```
+Error: Problem!
+```
+
+In the above the print message in `bar` is never printed, neither is the one in `baz`: `skip` returned the error message which was then checked with `enforce` and the error is actually raised. 
+
 ::: tip
-See the [escalation](/guide/escalation) to understand why `enforce` is so useful
+You can also set the `w` argument of the `skip` function to `TRUE` to skip warnings, e.g.: `skip(x, w = TRUE)`
 :::
+
+You can call `skip` as many times as you want to escalate the error back as much as necessary.
+

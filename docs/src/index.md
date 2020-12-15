@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: ''
 tagline: Error handling in R
 actionText: Quick Start →
 actionLink: /guide/get-started

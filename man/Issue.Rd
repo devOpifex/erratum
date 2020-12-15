@@ -74,12 +74,19 @@ Print message of error or warning.
 \if{latex}{\out{\hypertarget{method-return}{}}}
 \subsection{Method \code{return()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Issue$return()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Issue$return(n = 1)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{n}}{the number of generations to go back, passed to
+\code{\link[=parent.frame]{parent.frame()}}.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Details}{
 Return
-
 Returns self from parent function.
 }
 
