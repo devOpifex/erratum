@@ -30,12 +30,14 @@ Issue <- R6::R6Class(
       cat(msg, "\n")
     },
 #' @details Return
-#' 
 #' Returns self from parent function.
-    return = function(){
-      assign("return.issue", self, envir = parent.frame())
+#' 
+#' @param n the number of generations to go back, passed to
+#' [parent.frame()].
+    return = function(n = 1){
+      assign("return.issue", self, envir = parent.frame(n))
       call <- rlang::expr(return(return.issue)) 
-      rlang::eval_bare(call, env = parent.frame())
+      rlang::eval_bare(call, env = parent.frame(n))
     }
   ),
   private = list(
