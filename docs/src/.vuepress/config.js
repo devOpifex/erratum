@@ -39,10 +39,6 @@ module.exports = {
         link: '/guide/',
       },
       {
-        text: 'Config',
-        link: '/config/'
-      },
-      {
         text: 'Github',
         link: 'https://github.com/devOpifex/erratum'
       }
@@ -69,6 +65,7 @@ module.exports = {
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
+    '@vuepress/plugin-active-header-links',
+    '@vuepress/plugin-google-analytics'
   ]
 }
