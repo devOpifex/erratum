@@ -8,12 +8,8 @@ test_that("Basics", {
 
   testthat::expect_s3_class(error, "Error")
   testthat::expect_s3_class(warning, "Warning")
-
-  es <- error$message()
-  ws <- warning$message()
-
-  testthat::expect_equal(es, "Problem")
-  testthat::expect_equal(ws, "Caution")
+  testthat::expect_equal(error$message, "Problem")
+  testthat::expect_equal(warning$message, "Caution")
 
   error <- tryCatch(
     log("a"),

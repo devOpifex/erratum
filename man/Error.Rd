@@ -25,7 +25,6 @@ Error
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="addRule">}\href{../../erratum/html/Issue.html#method-addRule}{\code{erratum::Issue$addRule()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="check">}\href{../../erratum/html/Issue.html#method-check}{\code{erratum::Issue$check()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="initialize">}\href{../../erratum/html/Issue.html#method-initialize}{\code{erratum::Issue$initialize()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="message">}\href{../../erratum/html/Issue.html#method-message}{\code{erratum::Issue$message()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print">}\href{../../erratum/html/Issue.html#method-print}{\code{erratum::Issue$print()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="raise">}\href{../../erratum/html/Issue.html#method-raise}{\code{erratum::Issue$raise()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="return">}\href{../../erratum/html/Issue.html#method-return}{\code{erratum::Issue$return()}}\out{</span>}

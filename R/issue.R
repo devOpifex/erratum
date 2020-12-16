@@ -2,8 +2,9 @@
 #' 
 #' Core class to create and handle issues.
 #' 
-#' @field rule rules to perform checks, must be functions that
+#' @field rule Rules to perform checks, must be functions that
 #' accept a single argument and return a boolean.
+#' @field message The message (warning or error).
 #' 
 #' @export
 Issue <- R6::R6Class(
@@ -17,12 +18,6 @@ Issue <- R6::R6Class(
     initialize = function(obj, type = c("error", "warning")){
       private$msg <- extract(obj)
       private$type <- match.arg(type)
-    },
-#' @details Message
-#' 
-#' Retrieve the message
-    message = function(){
-      private$msg
     },
 #' @details Print
 #' 
@@ -76,9 +71,9 @@ Issue <- R6::R6Class(
 #' @details Raise error or warning
     raise = function(){
       if(private$type == "error")
-        stop(self$message(), call. = FALSE)
+        stop(self$message, call. = FALSE)
       else
-        warning(self$message(), call. = FALSE)
+        warning(self$message, call. = FALSE)
     }
   ),
   active = list(
@@ -90,6 +85,12 @@ Issue <- R6::R6Class(
         return(invisible())
 
       private$.rules <- append(private$.rules, fn)
+    },
+    message = function(msg){
+      if(!missing(msg))
+        return(e("This field is read-only"))
+
+      private$msg
     }
   ),
   private = list(
