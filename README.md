@@ -7,7 +7,7 @@
 [![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
-[Documentation](https://erratum.opifex.org)
+[Docs](https://erratum.opifex.org) | [Quick start](https://erratum.opifex.org/guide/get-started.html) | [Install](https://erratum.opifex.org/guide/installation.html)
 
 </div>
 

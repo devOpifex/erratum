@@ -2,7 +2,7 @@
 home: true
 heroImage: ''
 tagline: Error handling in R
-actionText: Quick Start →
+actionText: Get Started →
 actionLink: /guide/get-started
 features:
 - title: Shiny
