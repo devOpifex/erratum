@@ -12,10 +12,16 @@ e("erratum!")
 erratum!
 ```
 
-Note that this printed the error message (with `cat`) and thus does not actually stops code execution. However, `e` can stop code execution with the `stop` or `fatal` method (different names, identical execution). 
+Note that this printed the error message (with `cat`) and thus does not actually stops code execution. However, `e` can stop code execution with the `stop` or `fatal` method (different names, identical execution, `fatal` is more expressive). 
+
+Perhaps even better is the method named `raise` which will simply raise the error (`stop`) if is one or raise the warning: one method for all issues.
 
 ```r
 err <- e("erratum!")
+
+# err$raise()
+# err$stop()
+
 err$fatal()
 ```
 

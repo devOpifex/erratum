@@ -5,11 +5,11 @@ Warning <- R6::R6Class(
   "Warning",
   inherit = Issue,
   public = list(
-#' @details Stop
+#' @details Warn
 #' 
-#' Analogous to [stop()]
+#' Analogous to [warning()]
     warn = function(){
-      warning(self$message(), call. = FALSE)
+      super$raise()
     }
   )
 )

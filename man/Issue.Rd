@@ -6,6 +6,14 @@
 \description{
 Core class to create and handle issues.
 }
+\section{Active bindings}{
+\if{html}{\out{<div class="r6-active-bindings">}}
+\describe{
+\item{\code{rule}}{rules to perform checks, must be functions that
+accept a single argument and return a boolean.}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -13,6 +21,9 @@ Core class to create and handle issues.
 \item \href{#method-message}{\code{Issue$message()}}
 \item \href{#method-print}{\code{Issue$print()}}
 \item \href{#method-return}{\code{Issue$return()}}
+\item \href{#method-addRule}{\code{Issue$addRule()}}
+\item \href{#method-check}{\code{Issue$check()}}
+\item \href{#method-raise}{\code{Issue$raise()}}
 \item \href{#method-clone}{\code{Issue$clone()}}
 }
 }
@@ -88,6 +99,60 @@ Print message of error or warning.
 \subsection{Details}{
 Return
 Returns self from parent function.
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addRule"></a>}}
+\if{latex}{\out{\hypertarget{method-addRule}{}}}
+\subsection{Method \code{addRule()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Issue$addRule(fn)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fn}}{Function defining rule, must accept a single argument
+and return a boolean.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Details}{
+Add a rule
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-check"></a>}}
+\if{latex}{\out{\hypertarget{method-check}{}}}
+\subsection{Method \code{check()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Issue$check(obj)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{obj}}{Object to check by rules}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Details}{
+Add a predicate
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-raise"></a>}}
+\if{latex}{\out{\hypertarget{method-raise}{}}}
+\subsection{Method \code{raise()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Issue$raise()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Raise error or warning
 }
 
 }
