@@ -5,7 +5,8 @@ test_that("Skip", {
 
   bar <- function(){
     x <- foo()
-    skip(x)
+    y <- 1
+    skip(y, x)
     return(1)
   }
 
@@ -15,6 +16,13 @@ test_that("Skip", {
     skip(y, w = TRUE)
   }
 
+  nothing <- function(){
+    x <- 1L
+    skip(x)
+    x
+  }
+
+  testthat::expect_equal(nothing(), 1L)
   testthat::expect_s3_class(bar(), "Error")
   testthat::expect_s3_class(baz(), "Warning")
 })

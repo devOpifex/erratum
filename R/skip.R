@@ -30,5 +30,4 @@ skip <- function(..., w = FALSE){
       obj$return(2)
     }
   }
-  invisible()
 }

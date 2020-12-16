@@ -7,18 +7,11 @@
 [![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
-[Website](https://erratum.opifex.org)
+[Docs](https://erratum.opifex.org) | [Quick start](https://erratum.opifex.org/guide/get-started.html) | [Install](https://erratum.opifex.org/guide/installation.html)
 
 </div>
 
-Sometimes one might want a more refined handling of errors in R. For
-instance, in shiny applications or Plumber APIs where using `stop`
-crashes the service. Instead one might want to handle the error with
-more subtlety: erratum aims to enable this.
-
-This inspired by Go’s standard library; it makes it easier to
-standardise and handle error messages as well as warnings. Doing so
-forces the developer to deal with potential errors.
+Erratum handles errors and warnings in a manner inspired by Go's standard error library.
 
 ## Example
 
@@ -26,10 +19,10 @@ forces the developer to deal with potential errors.
 library(erratum)
 
 err <- e("Input must be a numeric")
+err$rule <- is.numeric
 
 safe_log <- function(x){
-  if(!is.numeric(x))
-    err$stop()
+  err$check(x)
 
   log(x)
 }

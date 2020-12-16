@@ -2,7 +2,7 @@
 
 The basics themselves only bring so much to error handling in R; they, however, enable a lot more.
 
-## Check
+## Class
 
 One can check whether the object returned is an error or a warning with `is.e` and `is.w` respectively.
 
@@ -203,3 +203,51 @@ You can also set the `w` argument of the `skip` function to `TRUE` to skip warni
 
 You can call `skip` as many times as you want to escalate the error back as much as necessary.
 
+## Rules and Checks
+
+When writing code one often themselves writing a lot of conditions to check inputs, outputs, etc. 
+
+Together with an error often comes checks that define when it should be raised. Erratum lets one define those rules (with the `rule` field or `addRule` method), these rules can then be checked with the `check` method. Internally it runs the rules and if any of them does not return `TRUE` raises the error.
+
+A rule is a function that accepts a single argument and must return a boolean.
+
+```r
+err <- e("Must be a character of length 3 or more")
+
+err$rule <- is.character
+err$rule <- function(x){
+  nchar(x) > 2
+}
+
+# passes
+err$check("hello")
+
+# not character
+err$check(1)
+
+# less than 2 character
+err$check("a")
+```
+
+This avoids having to write and re-write checks and their error messages.
+
+```r
+err <- e("Must be a numeric")
+err$rule <- is.numeric
+
+addOne <- function(x){
+  err$check(x)
+  x + 1
+}
+
+addTwo <- function(x){
+  err$check(x)
+  x + 2
+}
+
+# returns 3
+addOne(2)
+
+# raises error
+addTwo("a")
+```

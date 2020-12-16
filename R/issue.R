@@ -2,6 +2,9 @@
 #' 
 #' Core class to create and handle issues.
 #' 
+#' @field rule rules to perform checks, must be functions that
+#' accept a single argument and return a boolean.
+#' 
 #' @export
 Issue <- R6::R6Class(
   "Issue",
@@ -38,11 +41,61 @@ Issue <- R6::R6Class(
       assign("return.issue", self, envir = parent.frame(n))
       call <- rlang::expr(return(return.issue)) 
       rlang::eval_bare(call, env = parent.frame(n))
+    },
+#' @details Add a rule
+#' @param fn Function defining rule, must accept a single argument
+#' and return a boolean.
+    addRule = function(fn){
+      self$rule <- fn
+      invisible(self)
+    },
+#' @details Add a predicate
+#' @param obj Object to check by rules
+    check = function(obj){
+
+      if(length(private$.rules) == 0)
+        return(e("No `rule` is set"))
+
+      # run checks
+      bools <- sapply(private$.rules, function(fn, object){
+        jab(fn(object))
+      }, object = obj)
+
+      # skip if any failed
+      do.call(skip, as.list(bools))
+
+      if(!is.logical(bools))
+        return(e("Rules must return a logical/boolean value"))
+
+      # no error to raise
+      if(all(bools))
+        return(invisible())
+
+      self$raise()
+    },
+#' @details Raise error or warning
+    raise = function(){
+      if(private$type == "error")
+        stop(self$message(), call. = FALSE)
+      else
+        warning(self$message(), call. = FALSE)
+    }
+  ),
+  active = list(
+    rule = function(fn){
+      if(missing(fn))
+        return(e("This field is read-only"))
+
+      if(!is.function(fn))
+        return(invisible())
+
+      private$.rules <- append(private$.rules, fn)
     }
   ),
   private = list(
     msg = "",
-    type = "error"
+    type = "error",
+    .rules = list()
   )
 )
 
