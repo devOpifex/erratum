@@ -43,4 +43,6 @@ foo()
 Error in foo() : !missing(x) is not TRUE
 ```
 
-You certainly do not want to let errors just happen and often calling `stop` to break is not what one wants: it crashes shiny applications and plumber services.
+You certainly do not want to let errors just happen and often calling `stop` to break code execution is not ideal: it crashes shiny applications and plumber services.
+
+Erratum takes inspiration from Go's standard test package to provide some utilities to handle errors differently.
