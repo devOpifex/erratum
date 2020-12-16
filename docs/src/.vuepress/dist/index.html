@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.a876ac46.css" as="style"><link rel="preload" href="/assets/js/app.4c749577.js" as="script"><link rel="preload" href="/assets/js/2.b1252452.js" as="script"><link rel="preload" href="/assets/js/16.4bb62be9.js" as="script"><link rel="prefetch" href="/assets/js/10.2368c8da.js"><link rel="prefetch" href="/assets/js/11.94e92d33.js"><link rel="prefetch" href="/assets/js/12.41e1200e.js"><link rel="prefetch" href="/assets/js/13.64a5e175.js"><link rel="prefetch" href="/assets/js/14.2eadda5f.js"><link rel="prefetch" href="/assets/js/15.b69c72f2.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
+    <link rel="preload" href="/assets/css/0.styles.a876ac46.css" as="style"><link rel="preload" href="/assets/js/app.16377c7f.js" as="script"><link rel="preload" href="/assets/js/2.6424c907.js" as="script"><link rel="preload" href="/assets/js/16.3026d08c.js" as="script"><link rel="prefetch" href="/assets/js/10.2f9b0fa4.js"><link rel="prefetch" href="/assets/js/11.94e92d33.js"><link rel="prefetch" href="/assets/js/12.0b820cdc.js"><link rel="prefetch" href="/assets/js/13.5ab53dfa.js"><link rel="prefetch" href="/assets/js/14.25cd44ad.js"><link rel="prefetch" href="/assets/js/15.a253e244.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
     <link rel="stylesheet" href="/assets/css/0.styles.a876ac46.css">
   </head>
   <body>
@@ -33,9 +33,22 @@
       Error handling in R
     </p> <p class="action"><a href="/guide/get-started.html" class="nav-link action-button">
   Quick Start →
-</a></p></header> <div class="features"><div class="feature"><h2>Shiny</h2> <p>Elegantly handle errors to avoid crashing your applications</p></div><div class="feature"><h2>Plumber</h2> <p>Easily handle warnings or errors to keep the service up</p></div><div class="feature"><h2>Rmarkdown</h2> <p>Handle errors when it matters without breaking your entire document.</p></div></div> <div class="theme-default-content custom content__default"></div> <div class="footer">
+</a></p></header> <div class="features"><div class="feature"><h2>Shiny</h2> <p>Elegantly handle errors to avoid crashing your applications</p></div><div class="feature"><h2>Plumber</h2> <p>Easily handle warnings or errors to keep the service up</p></div><div class="feature"><h2>Rmarkdown</h2> <p>Handle errors when it matters without breaking your entire document.</p></div></div> <div class="theme-default-content custom content__default"><p>Dealing with errors and warnings in R is often limited to either letting them happen:</p> <div class="language-r extra-class"><pre class="language-r"><code>foo <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  print<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error in print(x) : argument &quot;x&quot; is missing, with no default
+</code></pre></div><p>Or simply using <code>stop()</code> and <code>warning()</code>.</p> <div class="language-r extra-class"><pre class="language-r"><code>foo <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  stopifnot<span class="token punctuation">(</span><span class="token operator">!</span>missing<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  print<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error in foo() : !missing(x) is not TRUE
+</code></pre></div><p>You certainly do not want to let errors just happen and often calling <code>stop</code> to break is not what one wants: it crashes shiny applications and plumber services.</p></div> <div class="footer">
     By Opifex
   </div></main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.4c749577.js" defer></script><script src="/assets/js/2.b1252452.js" defer></script><script src="/assets/js/16.4bb62be9.js" defer></script>
+    <script src="/assets/js/app.16377c7f.js" defer></script><script src="/assets/js/2.6424c907.js" defer></script><script src="/assets/js/16.3026d08c.js" defer></script>
   </body>
 </html>

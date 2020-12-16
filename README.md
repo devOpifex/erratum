@@ -7,11 +7,11 @@
 [![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 
-[Website](https://erratum.opifex.org)
+[Documentation](https://erratum.opifex.org)
 
 </div>
 
-Sometimes one might want a more refined handling of errors in R. For
+Sometimes one might want more refined handling of errors in R. For
 instance, in shiny applications or Plumber APIs where using `stop`
 crashes the service. Instead one might want to handle the error with
 more subtlety: erratum aims to enable this.

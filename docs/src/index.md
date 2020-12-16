@@ -13,3 +13,34 @@ features:
   details: Handle errors when it matters without breaking your entire document.
 footer: By Opifex
 ---
+
+Dealing with errors and warnings in R is often limited to either letting them happen:
+
+```r
+foo <- function(x){
+  print(x)
+}
+
+foo()
+```
+
+```
+Error in print(x) : argument "x" is missing, with no default
+```
+
+Or simply using `stop()` and `warning()`.
+
+```r
+foo <- function(x){
+  stopifnot(!missing(x))
+  print(x)
+}
+
+foo()
+```
+
+```
+Error in foo() : !missing(x) is not TRUE
+```
+
+You certainly do not want to let errors just happen and often calling `stop` to break is not what one wants: it crashes shiny applications and plumber services.
