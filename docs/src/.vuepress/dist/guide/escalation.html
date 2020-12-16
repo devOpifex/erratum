@@ -11,8 +11,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.a876ac46.css" as="style"><link rel="preload" href="/assets/js/app.a97bdc2c.js" as="script"><link rel="preload" href="/assets/js/2.6424c907.js" as="script"><link rel="preload" href="/assets/js/12.e3f4eca0.js" as="script"><link rel="prefetch" href="/assets/js/10.42c897e4.js"><link rel="prefetch" href="/assets/js/11.17b26744.js"><link rel="prefetch" href="/assets/js/13.02e54705.js"><link rel="prefetch" href="/assets/js/14.b27768ef.js"><link rel="prefetch" href="/assets/js/15.a253e244.js"><link rel="prefetch" href="/assets/js/16.bebe64a5.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.a876ac46.css">
+    <link rel="preload" href="/assets/css/0.styles.baa2fb6a.css" as="style"><link rel="preload" href="/assets/js/app.912fc84e.js" as="script"><link rel="preload" href="/assets/js/2.b1252452.js" as="script"><link rel="preload" href="/assets/js/12.c8c809af.js" as="script"><link rel="prefetch" href="/assets/js/10.c14de9c2.js"><link rel="prefetch" href="/assets/js/11.8c925332.js"><link rel="prefetch" href="/assets/js/13.544b3889.js"><link rel="prefetch" href="/assets/js/14.f9c7ba74.js"><link rel="prefetch" href="/assets/js/15.b69c72f2.js"><link rel="prefetch" href="/assets/js/16.4bb62be9.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.baa2fb6a.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">erratum</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
@@ -23,7 +23,7 @@
   Guide
 </a></div><div class="nav-item"><a href="https://github.com/devOpifex/erratum" target="_blank" rel="noopener noreferrer" class="nav-link external">
   Github
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li><li><a href="/guide/get-started.html" class="sidebar-link">Get Started</a></li><li><a href="/guide/handling.html" class="sidebar-link">Handling</a></li><li><a href="/guide/escalation.html" aria-current="page" class="active sidebar-link">Escalation</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="escalation"><a href="#escalation" class="header-anchor">#</a> Escalation</h1> <p>Error escalation is one of the more interesting features of the erratum. It's the concept of escalating an issue up until it should be dealt with.</p> <p>Take the example below for instance. There a function which we called <code>random.stuff</code> that might produce an error (in this case 1 chance out of two). This function is called by another, which is in turn called by another which uses the result to either stop code execution (with <code>enforce</code>) or compute something.</p> <div class="language-r extra-class"><pre class="language-r"><code>random.stuff <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li><li><a href="/guide/get-started.html" class="sidebar-link">Get Started</a></li><li><a href="/guide/handling.html" class="sidebar-link">Handling</a></li><li><a href="/guide/escalation.html" aria-current="page" class="active sidebar-link">Escalation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/escalation.html#basics" class="sidebar-link">Basics</a></li><li class="sidebar-sub-header"><a href="/guide/escalation.html#shiny" class="sidebar-link">Shiny</a></li><li class="sidebar-sub-header"><a href="/guide/escalation.html#plumber" class="sidebar-link">Plumber</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="escalation"><a href="#escalation" class="header-anchor">#</a> Escalation</h1> <p>Error escalation is one of the more interesting features of the erratum. It's the concept of escalating an issue up until it should be dealt with.</p> <h2 id="basics"><a href="#basics" class="header-anchor">#</a> Basics</h2> <p>Take the example below for instance. There a function which we called <code>random.stuff</code> that might produce an error (in this case 1 chance out of two). This function is called by another, which is in turn called by another which uses the result to either stop code execution (with <code>enforce</code>) or compute something.</p> <div class="language-r extra-class"><pre class="language-r"><code>random.stuff <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   s <span class="token operator">&lt;-</span> sample<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
 
   <span class="token keyword">if</span><span class="token punctuation">(</span>s <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">)</span>
@@ -54,11 +54,85 @@ bar<span class="token punctuation">(</span><span class="token punctuation">)</sp
 </code></pre></div><div class="language- extra-class"><pre class="language-text"><code>2.197225
 </code></pre></div><div class="language-r extra-class"><pre class="language-r"><code>bar<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Error: That's a problem!
-</code></pre></div><p>This is in fact very useful when you want to deal with errors somewhat differently, like in a shiny application where you might want to display a notification on error rather than crash or in Plumber where you would want to return the error message with status = you-messed-up.</p> <p>This is, of course, doable without erratum but is rather painful when the error or warning is raised in a deeply nested function.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><p>This is in fact very useful when you want to deal with errors somewhat differently, like in a shiny application where you might want to display a notification on error rather than crash or in Plumber where you would want to return the error message with status 400 you-messed-up or 500-we-messed-up.</p> <p>This is, of course, doable without erratum but is rather painful when the error or warning is raised in a deeply nested function.</p> <h2 id="shiny"><a href="#shiny" class="header-anchor">#</a> Shiny</h2> <p>Shiny applications tend to be user input heavy and these may fail.</p> <p>The application below takes as input the name of a column from the <code>cars</code> dataset, this is checked in a function nested in the call stack and makes it such that escalating the error can be tricky. Moreover we don't want use <code>stop</code> as this simply shows the error in the respective output from which is function is called.</p> <p>Instead we escalate the error and display a notification if the input is incorrect.</p> <div class="language-r extra-class"><pre class="language-r"><code>library<span class="token punctuation">(</span>shiny<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>erratum<span class="token punctuation">)</span>
+
+getCol <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>var <span class="token percent-operator operator">%in%</span> c<span class="token punctuation">(</span><span class="token string">&quot;speed&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    var <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;Wrong column name&quot;</span><span class="token punctuation">)</span>
+
+  var
+<span class="token punctuation">}</span>
+
+getData <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  col <span class="token operator">&lt;-</span> getCol<span class="token punctuation">(</span>var<span class="token punctuation">)</span>
+  skip<span class="token punctuation">(</span>col<span class="token punctuation">)</span>
+
+  cars<span class="token punctuation">[</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+ui <span class="token operator">&lt;-</span> fluidPage<span class="token punctuation">(</span>
+  textInput<span class="token punctuation">(</span>
+    <span class="token string">&quot;varInput&quot;</span><span class="token punctuation">,</span> 
+    <span class="token string">&quot;Enter a column name from the `cars` dataset&quot;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  verbatimTextOutput<span class="token punctuation">(</span><span class="token string">&quot;varOutput&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+server <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> output<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  output<span class="token operator">$</span>varOutput <span class="token operator">&lt;-</span> renderPrint<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data <span class="token operator">&lt;-</span> getData<span class="token punctuation">(</span>input<span class="token operator">$</span>varInput<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>is.e<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      showNotification<span class="token punctuation">(</span>data<span class="token operator">$</span>message<span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span>
+      return<span class="token punctuation">(</span>data<span class="token operator">$</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+shinyApp<span class="token punctuation">(</span>ui<span class="token punctuation">,</span> server<span class="token punctuation">)</span>
+</code></pre></div><p>One could of course place <code>showNotification</code> in the <code>getCol</code> function but then this function becomes less portable; it cannot really be used outside of the shiny application and the error cannot be treated differently elsewhere in the application.</p> <div class="language-r extra-class"><pre class="language-r"><code>getCol <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>var <span class="token percent-operator operator">%in%</span> c<span class="token punctuation">(</span><span class="token string">&quot;speed&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    showNotification<span class="token punctuation">(</span><span class="token string">&quot;Wrong column name&quot;</span><span class="token punctuation">)</span>
+
+  var
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="plumber"><a href="#plumber" class="header-anchor">#</a> Plumber</h2> <p>In plumber, very similar to what was done in shiny, although at the instead of showing a notification the error can be escalated and handled properly by setting the response status code correctly.</p> <div class="language-r extra-class"><pre class="language-r"><code><span class="token comment">#* Get Uppercase string</span>
+<span class="token comment">#* @param msg The message to turn uppercase</span>
+<span class="token comment">#* @get /upper</span>
+<span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> msg<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  uppercase <span class="token operator">&lt;-</span> parseMessage<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>is.e<span class="token punctuation">(</span>uppercase<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    res<span class="token operator">$</span>status <span class="token operator">&lt;-</span> <span class="token number">400L</span>
+    return<span class="token punctuation">(</span>uppercase<span class="token operator">$</span>message<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  list<span class="token punctuation">(</span>msg <span class="token operator">=</span> uppercase<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+parseMessage <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  msg <span class="token operator">&lt;-</span> checkMessage<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+  skip<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+
+  toupper<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+checkMessage <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>msg <span class="token operator">==</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+    return<span class="token punctuation">(</span>e<span class="token punctuation">(</span><span class="token string">&quot;Empty string&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  
+  msg
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-r extra-class"><pre class="language-r"><code>pr<span class="token punctuation">(</span><span class="token string">&quot;test.R&quot;</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%&gt;%</span> 
+  pr_run<span class="token punctuation">(</span>port <span class="token operator">=</span> <span class="token number">8000</span><span class="token punctuation">)</span> 
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/guide/handling.html" class="prev">
         Handling
       </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.a97bdc2c.js" defer></script><script src="/assets/js/2.6424c907.js" defer></script><script src="/assets/js/12.e3f4eca0.js" defer></script>
+    <script src="/assets/js/app.912fc84e.js" defer></script><script src="/assets/js/2.b1252452.js" defer></script><script src="/assets/js/12.c8c809af.js" defer></script>
   </body>
 </html>

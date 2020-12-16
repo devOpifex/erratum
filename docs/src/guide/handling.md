@@ -117,7 +117,7 @@ Error: Gah!
 ## Latch
 
 Errors and warnings can also be latched onto objects so they can be
-dealt with later, functions such as `is.e` or `enforce` will also work on those objects.
+dealt with later, functions such as `is.e`, `enforce`, and `skip` will also work on those objects.
 
 ```r
 x <- 1

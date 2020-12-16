@@ -14,6 +14,10 @@ erratum!
 
 Note that this printed the error message (with `cat`) and thus does not actually stops code execution. However, `e` can stop code execution with the `stop` or `fatal` method (different names, identical execution, `fatal` is more expressive). 
 
+::: tip
+The `raise` method works for both errors and warnings.
+:::
+
 Perhaps even better is the method named `raise` which will simply raise the error (`stop`) if is one or raise the warning: one method for all issues.
 
 ```r
@@ -41,10 +45,10 @@ Warning message:
 attention! 
 ```
 
-If you want to retrieve the message as a string to process it differently you can use the `message` method.
+If you want to retrieve the message as a string to process it differently you can use the `message` field.
 
 ```r
-(string <- www$message())
+(string <- www$message)
 
 class(string)
 ```
@@ -85,6 +89,10 @@ log_("two")
 Error: Input must be a numeric
 Error: Input must be a numeric
 ```
+
+::: tip
+Using [rules and checks](/guide/handling.html#rules-and-checks) is more convenient.
+:::
 
 ## Templating
 
