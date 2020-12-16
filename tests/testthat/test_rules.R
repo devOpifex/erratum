@@ -5,7 +5,8 @@ test_that("Rules", {
   testthat::expect_s3_class(err$check(), "Error")
 
   err$rule <- is.numeric
-
+  
+  testthat::expect_invisible(err$check(1))
   testthat::expect_error(err$check("a"))
 
   err$rule <- function(x){
@@ -16,9 +17,13 @@ test_that("Rules", {
 
   err <- e("Problem again!")
 
-  err$rule <- function(x){
-    "don't do this either"
-  }
+  testthat::expect_s3_class(
+    err$addRule(function(x){
+      "don't do that either"
+    }), 
+    "Error"
+  )
 
   testthat::expect_s3_class(err$check(1), "Error")
+  testthat::expect_invisible(err$rule <- "Aaah", "Error")
 })

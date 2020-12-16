@@ -87,7 +87,7 @@ Issue <- R6::R6Class(
         return(e("This field is read-only"))
 
       if(!is.function(fn))
-        return(e("Must be a function"))
+        return(invisible())
 
       private$.rules <- append(private$.rules, fn)
     }
