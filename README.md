@@ -1,6 +1,6 @@
 <div align="center">
 
-# erratum
+![](docs/src/.vuepress/public/erratum-logo.png)
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/devOpifex/erratum.svg?branch=master)](https://travis-ci.com/devOpifex/erratum)
