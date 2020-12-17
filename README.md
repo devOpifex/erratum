@@ -4,6 +4,7 @@
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/devOpifex/erratum.svg?branch=master)](https://travis-ci.com/devOpifex/erratum)
+[![R-CMD-check](https://github.com/devOpifex/erratum/workflows/R-CMD-check/badge.svg)](https://github.com/devOpifex/erratum/actions)
 [![Coveralls test coverage](https://coveralls.io/repos/github/devOpifex/erratum/badge.svg)](https://coveralls.io/github/devOpifex/erratum)
 <!-- badges: end -->
 

@@ -5,3 +5,4 @@ test.R
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^docs$
+^\.github$
