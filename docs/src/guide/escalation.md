@@ -49,7 +49,7 @@ bar()
 Error: That's a problem!
 ```
 
-This is in fact very useful when you want to deal with errors somewhat differently, like in a shiny application where you might want to display a notification on error rather than crash or in Plumber where you would want to return the error message with status 400 you-messed-up or 500-we-messed-up.
+This is in fact very useful when you want to deal with errors somewhat differently, like in a shiny application where you might want to display a notification on error rather than crash or display an ugly error, or in Plumber where you would want to return the error message with status 400 you-messed-up or 500-we-messed-up.
 
 This is, of course, doable without erratum but is rather painful when the error or warning is raised in a deeply nested function.
 
