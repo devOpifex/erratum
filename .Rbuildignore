@@ -6,3 +6,4 @@ test.R
 ^CRAN-RELEASE$
 ^docs$
 ^\.github$
+^CODE_OF_CONDUCT\.md$
