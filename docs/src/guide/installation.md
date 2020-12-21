@@ -1,6 +1,16 @@
 # Installation
 
-Erratum is not available on CRAN yet but can be obtained from [github](https://github.com/devOpifex/erratum) in a variety of ways.
+## Stable
+
+Erratum is available on CRAN.
+
+```r
+install.packages("erratum")
+```
+
+## Development
+
+The development version be obtained from [github](https://github.com/devOpifex/erratum) in a variety of ways.
 
 ## Remotes
 
