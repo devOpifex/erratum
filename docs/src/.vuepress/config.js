@@ -39,6 +39,10 @@ module.exports = {
         link: '/guide/',
       },
       {
+        text: 'Changelog',
+        link: '/changelog.md',
+      },
+      {
         text: 'Github',
         link: 'https://github.com/devOpifex/erratum'
       }

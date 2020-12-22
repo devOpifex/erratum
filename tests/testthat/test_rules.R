@@ -1,7 +1,7 @@
 test_that("Rules", {
   err <- e("Problem!")
 
-  testthat::expect_s3_class(err$rule, "Error")
+  testthat::expect_error(err$rule)
   testthat::expect_s3_class(err$check(), "Error")
 
   err$rule <- is.numeric

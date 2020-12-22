@@ -13,6 +13,9 @@ Core class to create and handle issues.
 accept a single argument and return a boolean.}
 
 \item{\code{message}}{The message (warning or error).}
+
+\item{\code{call}}{Expression or function (as string) that led
+to the issue.}
 }
 \if{html}{\out{</div>}}
 }

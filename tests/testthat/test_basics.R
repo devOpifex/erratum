@@ -11,6 +11,11 @@ test_that("Basics", {
   testthat::expect_equal(error$message, "Problem")
   testthat::expect_equal(warning$message, "Caution")
 
+  # it's called from test_that... from a function
+  # hence it is not NA
+  testthat::expect_false(is.na(warning$call))
+  testthat::expect_false(is.na(error$call))
+
   error <- tryCatch(
     log("a"),
     error = function(e) e(e)

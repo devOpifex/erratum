@@ -7,16 +7,35 @@
 #'
 #' @noRd 
 #' @keywords internal
-extract <- function(obj) UseMethod("extract")
+get_msg <- function(obj) UseMethod("get_msg")
 
-extract.character <- function(obj){
+get_msg.character <- function(obj){
   return(obj)
 }
 
-extract.error <- function(obj){
+get_msg.condition <- function(obj){
   return(obj$message)
 }
 
-extract.warning <- function(obj){
-  return(obj$message)
+
+#' Extract Call
+#' 
+#' Extract call from error and warnings.
+#' 
+#' @param obj Message string, object of class `error`,
+#' or `warning`.
+#'
+#' @noRd 
+#' @keywords internal
+get_call <- function(obj) UseMethod("get_call")
+
+get_call.condition <- function(obj){
+  if(obj$call == "e")
+    return(NA_character_)
+  
+  obj$call
+}
+
+get_call.character <- function(obj){
+  return(NA_character_)
 }

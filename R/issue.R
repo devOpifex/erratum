@@ -5,6 +5,8 @@
 #' @field rule Rules to perform checks, must be functions that
 #' accept a single argument and return a boolean.
 #' @field message The message (warning or error).
+#' @field call Expression or function (as string) that led
+#' to the issue.
 #' 
 #' @export
 Issue <- R6::R6Class(
@@ -16,7 +18,8 @@ Issue <- R6::R6Class(
 #' class `error`, or `warning`.
 #' @param type Type of message.
     initialize = function(obj, type = c("error", "warning")){
-      private$msg <- extract(obj)
+      private$msg <- get_msg(obj)
+      private$.call <- get_call(obj)
       private$type <- match.arg(type)
     },
 #' @details Print
@@ -79,7 +82,7 @@ Issue <- R6::R6Class(
   active = list(
     rule = function(fn){
       if(missing(fn))
-        return(e("This field is read-only"))
+        e("Missing rule")$raise()
 
       if(!is.function(fn))
         return(invisible())
@@ -88,14 +91,21 @@ Issue <- R6::R6Class(
     },
     message = function(msg){
       if(!missing(msg))
-        return(e("This field is read-only"))
+        e("This field is read-only")$raise()
 
       private$msg
+    },
+    call = function(call){
+      if(!missing(call))
+        e("This field is read-only")$raise()
+
+      private$.call
     }
   ),
   private = list(
     msg = "",
     type = "error",
+    .call = NA,
     .rules = list()
   )
 )
@@ -122,11 +132,19 @@ Issue <- R6::R6Class(
 #' @name ew
 #' @export 
 e <- function(obj){
+  if(is.character(obj))
+    obj <- simpleError(
+      obj, as.character(sys.call(sys.parent(1)))[1L]
+    )
   Error$new(obj, "error")
 }
 
 #' @rdname ew
 #' @export 
 w <- function(obj){
+  if(is.character(obj))
+    obj <- simpleWarning(
+      obj, as.character(sys.call(sys.parent(1)))[1L]
+    )
   Warning$new(obj, "warning")
 }

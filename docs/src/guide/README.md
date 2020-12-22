@@ -1,5 +1,9 @@
 # Introduction
 
+A brief introduction to the core issues that pushed to the creation of erratum.
+
+## Examples
+
 Dealing with errors and warnings in R is often limited to either letting them happen:
 
 ```r

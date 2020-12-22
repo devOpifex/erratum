@@ -65,20 +65,18 @@ class(string)
 Erratum treats errors and warning as objects. This, amongst other things, allows for easy standardisation of messages.
 
 ```r
-library(erratum)
-
 err <- e("Input must be a numeric")
 
 add_ <- function(x){
   if(!is.numeric(x))
-    err$stop()
+    err$raise()
 
   x + 1
 }
 
 log_ <- function(x){
   if(!is.numeric(x))
-    err$stop()
+    err$raise()
 
   log(x)
 }
@@ -94,6 +92,34 @@ Error: Input must be a numeric
 
 ::: tip
 Using [rules and checks](/guide/handling.html#rules-and-checks) is more convenient.
+:::
+
+## Return
+
+In the example given above we raise the error if input conditions are not met. Instead of doing this using the `stop`, `raise`, or `fatal`, one could use the `return` methods which returns the error from the parent function.
+
+In the example below `add_` returns the error if the input is not numeric __but does not halt code execution with `stop`.__
+
+```r
+err <- e("Input must be a numeric")
+
+add_ <- function(x){
+  if(!is.numeric(x))
+    err$return()
+
+  x + 1
+}
+
+(x <- add_("one"))
+is.e(x)
+```
+
+```
+Input must be a numeric
+```
+
+::: tip
+Read more about this in the [escalation](/guide/escalation) section.
 :::
 
 ## Templating
