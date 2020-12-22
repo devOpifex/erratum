@@ -17,8 +17,8 @@ test_that("latch", {
   testthat::expect_snapshot_output(lw)
   testthat::expect_true(is.e(le))
   testthat::expect_true(is.w(lw))
-  testthat::expect_error(enforce(le))
-  testthat::expect_warning(enforce(lw))
+  testthat::expect_error(resolve(le))
+  testthat::expect_warning(resolve(lw))
 
   unlatch(le)
   unlatch(lw)

@@ -24,7 +24,7 @@ output of \code{\link[=e]{e()}} or \code{\link[=w]{w()}}.}
 Latch an error or a warning to an object
 to indicate an issue associated with it.
 These can later be checked with \code{\link[=is.e]{is.e()}}
-and \code{\link[=is.w]{is.w()}}, and can also be \code{\link[=enforce]{enforce()}}.
+and \code{\link[=is.w]{is.w()}}, and can also be \code{\link[=resolve]{resolve()}}.
 }
 \section{Functions}{
 
@@ -41,7 +41,7 @@ problematic <- latch.e(x, e("Not right"))
 is.e(problematic)
 
 do_sth_with_x <- function(x){
- enforce(x)
+ resolve(x)
  x + 1
 }
 

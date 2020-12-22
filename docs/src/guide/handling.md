@@ -39,16 +39,16 @@ safe_log("a")
 Error in safe_log("a"): non-numeric argument to mathematical function
 ```
 
-## Enforce
+## Resolve
 
-Instead of checking the results of `tryCatch` with an `if` statement, one might want to use `enforce` which will check whether the result is an error or a warning and deal with it accordingly (`stop` or `warning`).
+Instead of checking the results of `tryCatch` with an `if` statement, one might want to use `resolve` which will check whether the result is an error or a warning and deal with it accordingly (`stop` or `warning`).
 
 ```r
 err <- e("Log only accepts numeric(s)")
 
 safe_log <- function(x){
  result <- jab(log(x), e = err)
- enforce(result)
+ resolve(result)
 
  return(result)
 } 
@@ -60,7 +60,7 @@ safe_log("a")
 Error: Log only accepts numeric(s)
 ```
 
-The `enforce` function accepts multiple objects, note that these are
+The `resolve` function accepts multiple objects, note that these are
 evaluated in order.
 
 ```r
@@ -68,7 +68,7 @@ x <- "just a string"
 www <- w("Caution")
 err <- e("Broken!")
 
-enforce(x, www, err)
+resolve(x, www, err)
 ```
 
 ```
@@ -76,21 +76,20 @@ Warning: Caution
 Error: Broken!
 ```
 
-One can, of course, `enforce` objects that are not errors or warnings: nothing happens.
+One can, of course, `resolve` objects that are not errors or warnings: nothing happens.
 
 ```r
-enforce(x)
+resolve(x)
 ```
 
-## Defer Enforce
+## Defer Resolve
 
-You can also use `defer_enforce` to defer the enforce when the function
-exits.
+You can also use `defer_resolve` to defer the resolve when the function exits.
 
 ```r
 safe_log <- function(x){
  result <- jab(log(x), e = e("Gah!"))
- defer_enforce(result)
+ defer_resolve(result)
 
  print("Doing something here")
 
@@ -117,7 +116,7 @@ Error: Gah!
 ## Latch
 
 Errors and warnings can also be latched onto objects so they can be
-dealt with later, functions such as `is.e`, `enforce`, and `skip` will also work on those objects.
+dealt with later, functions such as `is.e`, `resolve`, and `skip` will also work on those objects.
 
 ```r
 x <- 1
@@ -134,7 +133,7 @@ This allows escalating the error or warning so it can be dealt with later, e.g.:
 
 ```r
 do_sth_with_x <- function(x){
- enforce(x)
+ resolve(x)
  x + 1
 }
 
@@ -165,7 +164,7 @@ unlatch(problematic)
 
 ## Skip
 
-The `skip` function is similar to enforce but instead of calling `stop` or `warning` it `return`s the error or warning object from the parent function. This is useful to escalate the error to the parent function.
+The `skip` function is similar to resolve but instead of calling `stop` or `warning` it `return`s the error or warning object from the parent function. This is useful to escalate the error to the parent function.
 
 ```r
 # foo always returns an error
@@ -184,7 +183,7 @@ bar <- function(){
 # baz calls bar
 baz <- function(){
   y <- bar()
-  enforce(y)
+  resolve(y)
   print("This should not print either")
 }
 
@@ -195,7 +194,7 @@ baz()
 Error: Problem!
 ```
 
-In the above the print message in `bar` is never printed, neither is the one in `baz`: `skip` returned the error message which was then checked with `enforce` and the error is actually raised. 
+In the above the print message in `bar` is never printed, neither is the one in `baz`: `skip` returned the error message which was then checked with `resolve` and the error is actually raised. 
 
 ::: tip
 You can also set the `w` argument of the `skip` function to `TRUE` to skip warnings, e.g.: `skip(x, w = TRUE)`

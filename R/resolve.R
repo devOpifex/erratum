@@ -1,4 +1,4 @@
-#' Enforce Errors and Warnings
+#' Resolve Errors and Warnings
 #' 
 #' @param ... Objects to check, if any of them is an `Error` 
 #' then [stop()] is called, if any are `Warning`s then [warning()]
@@ -6,9 +6,11 @@
 #' 
 #' @details Objects passed are evalutated in order.
 #' 
-#' @name enforces
+#' @return Invisiby returns `NULL`
+#' 
+#' @name resolves
 #' @export 
-enforce <- function(...) {
+resolve <- function(...) {
   # there may be no need to check
   has <- lapply(list(...), is.err)
   has <- unlist(has)
@@ -21,11 +23,38 @@ enforce <- function(...) {
   invisible()
 }
 
-#' @name enforces
+#' @rdname resolves
+#' @export 
+defer_resolve <- function(...){
+  do.call(
+    on.exit, list(substitute(resolve(...)), add = TRUE),
+    envir = parent.frame() 
+  )
+}
+
+#' @rdname resolves
+#' @export 
+enforce <- function(...) {
+  .Deprecated(
+    "resolve", 
+    package = "resolve",
+    "enforce is deprecated in favour of resolve"
+  )
+
+  resolve(...)
+}
+
+#' @rdname resolves
 #' @export 
 defer_enforce <- function(...){
+  .Deprecated(
+    "defer_resolve", 
+    package = "resolve",
+    "defer_enforce is deprecated in favour of defer_resolve"
+  )
+
   do.call(
-    on.exit, list(substitute(enforce(...)), add = TRUE),
+    on.exit, list(substitute(resolve(...)), add = TRUE),
     envir = parent.frame() 
   )
 }

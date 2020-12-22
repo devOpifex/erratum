@@ -1,3 +1,7 @@
+# erratum 2.1.0.9000
+
+- Deprecate `enforce` in favour of `resolve`, much easier to memorise
+
 # erratum 2.0.0
 
 - Rename the package from err to erratum: err is already on CRAN.

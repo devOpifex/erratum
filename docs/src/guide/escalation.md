@@ -4,7 +4,7 @@ Error escalation is one of the more interesting features of the erratum. It's th
 
 ## Basics
 
-Take the example below for instance. There a function which we called `random.stuff` that might produce an error (in this case 1 chance out of two). This function is called by another, which is in turn called by another which uses the result to either stop code execution (with `enforce`) or compute something.
+Take the example below for instance. There a function which we called `random.stuff` that might produce an error (in this case 1 chance out of two). This function is called by another, which is in turn called by another which uses the result to either stop code execution (with `resolve`) or compute something.
 
 ```r
 random.stuff <- function(){
@@ -28,8 +28,8 @@ foo <- function(){
 bar <- function(){
   value <- foo()
 
-  # enforce the error if needed
-  enforce(value)
+  # resolve the error if needed
+  resolve(value)
 
   log(value)
 }

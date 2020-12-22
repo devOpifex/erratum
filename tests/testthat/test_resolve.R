@@ -1,14 +1,14 @@
-test_that("Enforce", {
+test_that("Resolve", {
   err <- e("Problem")
   warn <- w("Caution")
 
-  testthat::expect_error(enforce(err))
-  testthat::expect_warning(enforce(warn))
-  enforce("Nothing to do")
+  testthat::expect_error(resolve(err))
+  testthat::expect_warning(resolve(warn))
+  resolve("Nothing to do")
 
   safe_log <- function(x){
     rez <- jab(log(x), e = e("Argh!"))
-    defer_enforce(rez)
+    defer_resolve(rez)
     return(rez)
   }
   

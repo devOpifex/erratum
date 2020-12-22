@@ -37,6 +37,8 @@ Similar for warnings, use `w` to create a warning object and use the `warn` meth
 
 ```r
 www <- w("attention!")
+
+# err$raise()
 www$warn()
 ```
 
