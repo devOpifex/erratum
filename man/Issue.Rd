@@ -16,6 +16,11 @@ accept a single argument and return a boolean.}
 
 \item{\code{call}}{Expression or function (as string) that led
 to the issue.}
+
+\item{\code{raiser}}{Function to run when the \code{raise} method
+is called. By default the error uses \code{stop()} and warning
+uses \code{warning()}. The function must accept a single argument:
+the error message (character vector).}
 }
 \if{html}{\out{</div>}}
 }
@@ -137,9 +142,16 @@ Add a predicate
 \if{latex}{\out{\hypertarget{method-raise}{}}}
 \subsection{Method \code{raise()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Issue$raise()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Issue$raise(fn)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fn}}{A function to use to raise the issue.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Details}{
 Raise error or warning
 }

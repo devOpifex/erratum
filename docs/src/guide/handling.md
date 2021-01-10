@@ -2,6 +2,38 @@
 
 The basics themselves only bring so much to error handling in R; they, however, enable a lot more.
 
+## Raiser
+
+One can pass a "raiser," a function that is used instead of the default function when the `raise` method is called. By default `raise` uses `stop` for errors and `warning` for warnings.
+
+```r
+err <- e("print this")
+
+err$raiser <- function(msg){
+  stop(crayon::white(msg), call. = FALSE)
+}
+
+err$raise()
+```
+
+```
+#> Error: print this
+```
+
+::: tip
+One can also pass this function straight to the `raise` method.
+:::
+
+```r
+err <- e("print this")
+
+raiser_ <- function(msg){
+  stop(crayon::white(msg), call. = FALSE)
+}
+
+err$raise(raiser_)
+```
+
 ## Class
 
 One can check whether the object returned is an error or a warning with `is.e` and `is.w` respectively.

@@ -4,7 +4,16 @@
 Error <- R6::R6Class(
   "Error",
   inherit = Issue,
+#' @details Initialise
+#' 
+#' @param obj A character string or an object of 
+#' class `error`, or `warning`.
+#' @param type Type of message.
   public = list(
+    initialize = function(obj){
+      super$initialize(obj, type = "error")
+      super$raiser <- stopper
+    },
 #' @details Stop
 #' 
 #' Analogous to [stop()]
@@ -19,3 +28,7 @@ Error <- R6::R6Class(
     }
   )
 )
+
+stopper <- function(message){
+  stop(message, call. = FALSE)
+}

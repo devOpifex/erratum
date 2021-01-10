@@ -7,6 +7,10 @@
 #' @field message The message (warning or error).
 #' @field call Expression or function (as string) that led
 #' to the issue.
+#' @field raiser Function to run when the `raise` method 
+#' is called. By default the error uses `stop()` and warning
+#' uses `warning()`. The function must accept a single argument:
+#' the error message (character vector).
 #' 
 #' @export
 Issue <- R6::R6Class(
@@ -72,11 +76,12 @@ Issue <- R6::R6Class(
       self$raise()
     },
 #' @details Raise error or warning
-    raise = function(){
-      if(private$type == "error")
-        stop(self$message, call. = FALSE)
+#' @param fn A function to use to raise the issue.
+    raise = function(fn){
+      if(!is.null(fn))
+        fn(self$message)
       else
-        warning(self$message, call. = FALSE)
+        private$.raiser(self$message)
     }
   ),
   active = list(
@@ -100,13 +105,23 @@ Issue <- R6::R6Class(
         e("This field is read-only")$raise()
 
       private$.call
+    },
+    raiser = function(fn){
+      if(missing(fn))
+        e("Missing function")$raise()
+
+      if(!is.function(fn))
+        return(invisible())
+
+      private$.raiser <- fn
     }
   ),
   private = list(
     msg = "",
     type = "error",
     .call = NA,
-    .rules = list()
+    .rules = list(),
+    .raiser = NULL
   )
 )
 
@@ -136,7 +151,7 @@ e <- function(obj){
     obj <- simpleError(
       obj, as.character(sys.call(sys.parent(1)))[1L]
     )
-  Error$new(obj, "error")
+  Error$new(obj)
 }
 
 #' @rdname ew
@@ -146,5 +161,5 @@ w <- function(obj){
     obj <- simpleWarning(
       obj, as.character(sys.call(sys.parent(1)))[1L]
     )
-  Warning$new(obj, "warning")
+  Warning$new(obj)
 }

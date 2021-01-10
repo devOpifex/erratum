@@ -4,7 +4,16 @@
 Warning <- R6::R6Class(
   "Warning",
   inherit = Issue,
+#' @details Initialise
+#' 
+#' @param obj A character string or an object of 
+#' class `error`, or `warning`.
+#' @param type Type of message.
   public = list(
+    initialize = function(obj){
+      super$initialize(obj, type = "warning")
+      super$raiser <- warner
+    },
 #' @details Warn
 #' 
 #' Analogous to [warning()]
@@ -13,3 +22,7 @@ Warning <- R6::R6Class(
     }
   )
 )
+
+warner <- function(message){
+  warning(message, call. = FALSE)
+}

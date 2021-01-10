@@ -3,6 +3,7 @@
 - Deprecate `enforce` in favour of `resolve`, much easier to memorise
 - Ability to retrieve the call wherefrom the issue originates (from the `call` field)
 - `e` and `w` capture the name of the parent function from which they are called
+- Added `raiser` to change the `raise` method.
 
 # erratum 2.0.0
 
