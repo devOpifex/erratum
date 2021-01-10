@@ -142,7 +142,7 @@ Add a predicate
 \if{latex}{\out{\hypertarget{method-raise}{}}}
 \subsection{Method \code{raise()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Issue$raise(fn)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Issue$raise(fn = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

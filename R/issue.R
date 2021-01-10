@@ -77,7 +77,7 @@ Issue <- R6::R6Class(
     },
 #' @details Raise error or warning
 #' @param fn A function to use to raise the issue.
-    raise = function(fn){
+    raise = function(fn = NULL){
       if(!is.null(fn))
         fn(self$message)
       else
