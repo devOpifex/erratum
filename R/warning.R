@@ -12,7 +12,7 @@ Warning <- R6::R6Class(
   public = list(
     initialize = function(obj){
       super$initialize(obj, type = "warning")
-      super$raiser <- warner
+      super$raiser <- getOption("ERR_RAISER_WARNING", warner)
     },
 #' @details Warn
 #' 
@@ -22,7 +22,3 @@ Warning <- R6::R6Class(
     }
   )
 )
-
-warner <- function(message){
-  warning(message, call. = FALSE)
-}

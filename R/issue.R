@@ -56,7 +56,7 @@ Issue <- R6::R6Class(
     check = function(obj){
 
       if(length(private$.rules) == 0)
-        return(e("No `rule` is set"))
+        e("No `rule` is set")$return()
 
       # run checks
       bools <- sapply(private$.rules, function(fn, object){
@@ -90,7 +90,7 @@ Issue <- R6::R6Class(
         e("Missing rule")$raise()
 
       if(!is.function(fn))
-        return(invisible())
+        e("Must pass a function")$raise()
 
       private$.rules <- append(private$.rules, fn)
     },
@@ -111,7 +111,7 @@ Issue <- R6::R6Class(
         e("Missing function")$raise()
 
       if(!is.function(fn))
-        return(invisible())
+        e("Must pass a function")$raise()
 
       private$.raiser <- fn
     }

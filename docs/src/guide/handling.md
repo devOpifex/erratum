@@ -20,18 +20,30 @@ err$raise()
 #> Error: print this
 ```
 
-::: tip
-One can also pass this function straight to the `raise` method.
-:::
+This function can also be passed to specific `raise` method for the odd cases.
 
 ```r
 err <- e("print this")
 
-raiser_ <- function(msg){
+raise_ <- function(msg){
   stop(crayon::white(msg), call. = FALSE)
 }
 
-err$raise(raiser_)
+err$raise(raise_)
+```
+
+::: tip
+Use `raise.e` and `raise.w` to define global templates.
+:::
+
+Defining templates is ideal when you need a consistent way to raise errors or warnings, e.g.: in shiny where one might want to show a notification instead of calling `stop`.
+
+```r
+notify_ <- function(msg){
+  shiny::showNotification(msg, type = "error")
+}
+
+raise.e(notify_)
 ```
 
 ## Class

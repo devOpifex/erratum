@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.baa2fb6a.css" as="style"><link rel="preload" href="/assets/js/app.1d332a21.js" as="script"><link rel="preload" href="/assets/js/2.b1252452.js" as="script"><link rel="preload" href="/assets/js/14.4e70113f.js" as="script"><link rel="prefetch" href="/assets/js/10.e8eb2be4.js"><link rel="prefetch" href="/assets/js/11.0ebf3cb4.js"><link rel="prefetch" href="/assets/js/12.87d43c65.js"><link rel="prefetch" href="/assets/js/13.70504ba0.js"><link rel="prefetch" href="/assets/js/15.7e723b81.js"><link rel="prefetch" href="/assets/js/16.4bb62be9.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
+    <link rel="preload" href="/assets/css/0.styles.baa2fb6a.css" as="style"><link rel="preload" href="/assets/js/app.ef0ff972.js" as="script"><link rel="preload" href="/assets/js/2.b1252452.js" as="script"><link rel="preload" href="/assets/js/14.511a18dc.js" as="script"><link rel="prefetch" href="/assets/js/10.4874018d.js"><link rel="prefetch" href="/assets/js/11.0ebf3cb4.js"><link rel="prefetch" href="/assets/js/12.87d43c65.js"><link rel="prefetch" href="/assets/js/13.70504ba0.js"><link rel="prefetch" href="/assets/js/15.7e723b81.js"><link rel="prefetch" href="/assets/js/16.4bb62be9.js"><link rel="prefetch" href="/assets/js/3.14fc36d1.js"><link rel="prefetch" href="/assets/js/4.18b7f171.js"><link rel="prefetch" href="/assets/js/5.b3fd2e46.js"><link rel="prefetch" href="/assets/js/6.7ec98c47.js"><link rel="prefetch" href="/assets/js/7.f259934a.js"><link rel="prefetch" href="/assets/js/8.a653ee49.js"><link rel="prefetch" href="/assets/js/9.f475aa9b.js">
     <link rel="stylesheet" href="/assets/css/0.styles.baa2fb6a.css">
   </head>
   <body>
@@ -35,13 +35,18 @@ err<span class="token operator">$</span>raiser <span class="token operator">&lt;
 
 err<span class="token operator">$</span>raise<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre></div><div class="language- extra-class"><pre class="language-text"><code>#&gt; Error: print this
-</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>One can also pass this function straight to the <code>raise</code> method.</p></div> <div class="language-r extra-class"><pre class="language-r"><code>err <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;print this&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>This function can also be passed to specific <code>raise</code> method for the odd cases.</p> <div class="language-r extra-class"><pre class="language-r"><code>err <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;print this&quot;</span><span class="token punctuation">)</span>
 
-raiser_ <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+raise_ <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
   stop<span class="token punctuation">(</span>crayon<span class="token operator">::</span>white<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">,</span> call. <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
-err<span class="token operator">$</span>raise<span class="token punctuation">(</span>raiser_<span class="token punctuation">)</span>
+err<span class="token operator">$</span>raise<span class="token punctuation">(</span>raise_<span class="token punctuation">)</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Use <code>raise.e</code> and <code>raise.w</code> to define global templates.</p></div> <p>Defining templates is ideal when you need a consistent way to raise errors or warnings, e.g.: in shiny where one might want to show a notification instead of calling <code>stop</code>.</p> <div class="language-r extra-class"><pre class="language-r"><code>notify_ <span class="token operator">&lt;-</span> <span class="token keyword">function</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  shiny<span class="token operator">::</span>showNotification<span class="token punctuation">(</span>msg<span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+raise.e<span class="token punctuation">(</span>notify_<span class="token punctuation">)</span>
 </code></pre></div><h2 id="class"><a href="#class" class="header-anchor">#</a> Class</h2> <p>One can check whether the object returned is an error or a warning with <code>is.e</code> and <code>is.w</code> respectively.</p> <div class="language-r extra-class"><pre class="language-r"><code>x <span class="token operator">&lt;-</span> e<span class="token punctuation">(</span><span class="token string">&quot;This is an error&quot;</span><span class="token punctuation">)</span>
 
 is.e<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
@@ -175,6 +180,6 @@ addTwo<span class="token punctuation">(</span><span class="token string">&quot;a
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.1d332a21.js" defer></script><script src="/assets/js/2.b1252452.js" defer></script><script src="/assets/js/14.4e70113f.js" defer></script>
+    <script src="/assets/js/app.ef0ff972.js" defer></script><script src="/assets/js/2.b1252452.js" defer></script><script src="/assets/js/14.511a18dc.js" defer></script>
   </body>
 </html>

@@ -25,5 +25,5 @@ test_that("Rules", {
   )
 
   testthat::expect_s3_class(err$check(1), "Error")
-  testthat::expect_invisible(err$rule <- "Aaah", "Error")
+  testthat::expect_error(err$rule <- "Aaah")
 })

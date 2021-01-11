@@ -12,7 +12,7 @@ Error <- R6::R6Class(
   public = list(
     initialize = function(obj){
       super$initialize(obj, type = "error")
-      super$raiser <- stopper
+      super$raiser <- getOption("ERR_RAISER_ERROR", stopper)
     },
 #' @details Stop
 #' 
@@ -28,7 +28,3 @@ Error <- R6::R6Class(
     }
   )
 )
-
-stopper <- function(message){
-  stop(message, call. = FALSE)
-}
