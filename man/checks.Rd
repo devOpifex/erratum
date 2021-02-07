@@ -8,6 +8,7 @@
 \alias{is.w}
 \alias{is.w.default}
 \alias{is.w.err}
+\alias{is.problem}
 \title{Check}
 \usage{
 is.e(obj)
@@ -21,13 +22,27 @@ is.w(obj)
 \method{is.w}{default}(obj)
 
 \method{is.w}{err}(obj)
+
+is.problem(obj)
 }
 \arguments{
 \item{obj}{Object to check.}
 }
+\value{
+A boolean value.
+}
 \description{
 Check whether an object is an error or a warning.
 }
+\section{Functions}{
+
+\itemize{
+\item \code{is.e}: Whether the object is an error.
+\item \code{is.w}: Whether the object is a warning.
+\item \code{is.problem}: Whether the object is an error or a warning.
+}
+}
+
 \examples{
 err <- e("Whoops!")
 

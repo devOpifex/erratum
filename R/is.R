@@ -4,6 +4,14 @@
 #' 
 #' @param obj Object to check.
 #' 
+#' @section Functions:
+#' 
+#' - `is.e`: Whether the object is an error.
+#' - `is.w`: Whether the object is a warning.
+#' - `is.problem`: Whether the object is an error or a warning.
+#' 
+#' @return A boolean value.
+#' 
 #' @examples 
 #' err <- e("Whoops!")
 #' 
@@ -44,6 +52,8 @@ is.w.err <- function(obj){
   is.w(get_attr_w(obj))
 }
 
-is.err <- function(obj){
+#' @rdname checks
+#' @export
+is.problem <- function(obj){
   is.e(obj) || is.w(obj)
 }

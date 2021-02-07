@@ -12,7 +12,7 @@
 #' @export 
 resolve <- function(...) {
   # there may be no need to check
-  has <- lapply(list(...), is.err)
+  has <- lapply(list(...), is.problem)
   has <- unlist(has)
 
   if(!any(has))
