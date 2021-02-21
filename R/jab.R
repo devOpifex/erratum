@@ -41,6 +41,9 @@ callback_e <- function(e = NULL){
     function(err){
       if(is.null(e))
         return(e(err))
+
+      if(is.function(e))
+        return(e(err))
       
       return(e)
     }
@@ -54,6 +57,9 @@ callback_w <- function(w = NULL){
   return(
     function(war){
       if(is.null(w))
+        return(w(war))
+
+      if(is.function(w))
         return(w(war))
       
       return(w)

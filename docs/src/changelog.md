@@ -5,6 +5,8 @@
 - `e` and `w` capture the name of the parent function from which they are called
 - Added `raiser` to change the `raise` method.
 - `raise.e` and `raise.w` to define global `raise` methods
+- Added `is.problem` to check whether the object is an error or a warning
+- Fix `jab` when warning or error use a function.
 
 # erratum 2.0.0
 
