@@ -49,7 +49,7 @@ Some thoughts on handling errors and what erratum enables.
 
 1. There are many cases where __escalating errors and warnings__ is imperative (e.g.: [titan](https://titan.opifex.org)), though it's of course possible in base R it is rather unwieldy.
 2. One reason for escalation is to __resolve errors differently__ than the go-to `stop`. The problem with the latter is that it breaks code execution and, in places like shiny, and plumber, can cause unwanted user-facing embarassement.
-3. Because we use `stop` we force others to use control structures such as `tryCatch` that make for poor programs. Return the error and let the user deal with it how they feel rather than force them to wrap, every call to your function with a `try*`.
+3. Because we use `stop` we __force others__ to use control structures such as `tryCatch` that make for poor programs. Return the error and let the user deal with it how they feel rather than force them to wrap, every call to your function with a `try*`.
 4. Too often __issues are not considered properly__; one simply calls `stop` or `warning` without thinking about their implication or meaning. 
 
 To be clear, there is nothing you can do with erratum that you cannot do in base R but I hope that erratum makes it easier (in places).
