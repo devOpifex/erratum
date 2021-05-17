@@ -41,7 +41,7 @@ Erratum takes inspiration from Go's standard test package to provide some utilit
 
 In Go errors are objects, in erratum they are too. The advantage is that one does not have to call `stop` or deal with it at that very moment. The error can be escalated and dealt with where appropriate and more elegantly; you can decorate them with more information, ignore them, but you are forced to think about how to deal with it at least (and not just call `stop`).
 
-Erratum let's you have errors as values, not exceptions that have to be dealt with immediately, you can store them, put them in a list, send them to the your aunt, they are just values. 
+Erratum let's you have errors as values, not exceptions that have to be dealt with immediately, you can store them, put them in a list, send them to the your aunt, do what you wnat with it: they're just values. 
 
 ## Handling errors
 
