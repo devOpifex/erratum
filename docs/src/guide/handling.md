@@ -60,15 +60,15 @@ is.e(x)
 [1] TRUE
 ```
 
-## Jab
+## Bash
 
-The function `jab` is analogous to `tryCatch` but will use `err`
+The function `bash` is analogous to `tryCatch` but will use `err`
 internally. It also allows passing `e` and `w` along to easily reuse
 error messages.
 
 ```r
 safe_log <- function(x){
- result <- jab(log(x))
+ result <- bash(log(x))
  
  if(is.e(result))
    result$stop()
@@ -91,7 +91,7 @@ Instead of checking the results of `tryCatch` with an `if` statement, one might 
 err <- e("Log only accepts numeric(s)")
 
 safe_log <- function(x){
- result <- jab(log(x), e = err)
+ result <- bash(log(x), e = err)
  resolve(result)
 
  return(result)
@@ -132,7 +132,7 @@ You can also use `defer_resolve` to defer the resolve when the function exits.
 
 ```r
 safe_log <- function(x){
- result <- jab(log(x), e = e("Gah!"))
+ result <- bash(log(x), e = e("Gah!"))
  defer_resolve(result)
 
  print("Doing something here")

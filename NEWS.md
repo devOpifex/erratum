@@ -1,3 +1,7 @@
+# erratum 2.1.0.9000
+
+- Renamed `jab` to `bash`
+
 # erratum 2.1.0
 
 - Deprecate `enforce` in favour of `resolve`, much easier to memorise

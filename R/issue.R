@@ -60,7 +60,7 @@ Issue <- R6::R6Class(
 
       # run checks
       bools <- sapply(private$.rules, function(fn, object){
-        jab(fn(object))
+        bash(fn(object))
       }, object = obj)
 
       # skip if any failed

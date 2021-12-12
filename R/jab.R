@@ -1,4 +1,4 @@
-#' Take a Jab
+#' Take a Bash
 #' 
 #' Equivalent to [tryCatch()].
 #' 
@@ -8,7 +8,7 @@
 #' 
 #' @examples 
 #' safe_log <- function(x){
-#'  result <- jab(log(x))
+#'  result <- bash(log(x))
 #'  
 #'  if(is.e(result))
 #'    stop(result$stop())
@@ -20,7 +20,7 @@
 #'  safe_log("a")
 #' 
 #' @export 
-jab <- function(expr, e = NULL, w = NULL){
+bash <- function(expr, e = NULL, w = NULL){
   tryCatch(
     expr,
     error = callback_e(e),
@@ -28,9 +28,9 @@ jab <- function(expr, e = NULL, w = NULL){
   )
 }
 
-#' Create Callbacks for jab
+#' Create Callbacks for bash
 #' 
-#' Creates callback for [jab()].
+#' Creates callback for [bash()].
 #' 
 #' @name callbacks
 #' 
