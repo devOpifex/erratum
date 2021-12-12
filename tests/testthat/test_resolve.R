@@ -7,7 +7,7 @@ test_that("Resolve", {
   resolve("Nothing to do")
 
   safe_log <- function(x){
-    rez <- jab(log(x), e = e("Argh!"))
+    rez <- bash(log(x), e = e("Argh!"))
     defer_resolve(rez)
     return(rez)
   }
