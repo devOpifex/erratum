@@ -83,6 +83,18 @@ safe_log("a")
 Error in safe_log("a"): non-numeric argument to mathematical function
 ```
 
+## Globals
+
+You can also set the above as options so all errors will
+use the defined raiser.
+
+```r
+options(
+  ERR_RAISER_ERROR = function(msg) cat(msg, "!!!\n"),
+  ERR_RAISER_WARNING = function(msg) cat(x, "!\n")
+)
+```
+
 ## Resolve
 
 Instead of checking the results of `tryCatch` with an `if` statement, one might want to use `resolve` which will check whether the result is an error or a warning and deal with it accordingly (`stop` or `warning`).
@@ -108,7 +120,10 @@ The `resolve` function accepts multiple objects, note that these are
 evaluated in order.
 
 ```r
+# nothing to resolve
 x <- "just a string"
+
+# should resolve
 www <- w("Caution")
 err <- e("Broken!")
 
@@ -123,7 +138,7 @@ Error: Broken!
 One can, of course, `resolve` objects that are not errors or warnings: nothing happens.
 
 ```r
-resolve(x)
+resolve("nothing wrong here")
 ```
 
 ## Defer Resolve

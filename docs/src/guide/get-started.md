@@ -18,7 +18,7 @@ Note that this printed the error message (with `cat`) and thus does not actually
 The `raise` method works for both errors and warnings.
 :::
 
-Perhaps even better is the method named `raise` which will simply raise the error (`stop`) if is one or raise the warning: one method for all issues.
+Perhaps even better is the method named `raise` which will simply raise the error (`stop`) or raise the warning: one method for all "issues."
 
 ```r
 err <- e("erratum!")
@@ -116,6 +116,7 @@ is.e(x)
 
 ```
 Input must be a numeric
+TRUE
 ```
 
 ::: tip
