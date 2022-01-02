@@ -30,12 +30,12 @@ get_msg.condition <- function(obj){
 get_call <- function(obj) UseMethod("get_call")
 
 get_call.condition <- function(obj){
-  if(obj$call == "e")
+  if(is.null(obj$call))
     return(NA_character_)
-  
+
   obj$call
 }
 
 get_call.character <- function(obj){
-  return(NA_character_)
+  NA_character_
 }

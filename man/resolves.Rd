@@ -4,17 +4,11 @@
 \alias{resolves}
 \alias{resolve}
 \alias{defer_resolve}
-\alias{enforce}
-\alias{defer_enforce}
 \title{Resolve Errors and Warnings}
 \usage{
 resolve(...)
 
 defer_resolve(...)
-
-enforce(...)
-
-defer_enforce(...)
 }
 \arguments{
 \item{...}{Objects to check, if any of them is an \code{Error}
