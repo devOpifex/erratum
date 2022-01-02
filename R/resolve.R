@@ -32,33 +32,6 @@ defer_resolve <- function(...){
   )
 }
 
-#' @rdname resolves
-#' @export 
-enforce <- function(...) {
-  .Deprecated(
-    "resolve", 
-    package = "resolve",
-    "enforce is deprecated in favour of resolve"
-  )
-
-  resolve(...)
-}
-
-#' @rdname resolves
-#' @export 
-defer_enforce <- function(...){
-  .Deprecated(
-    "defer_resolve", 
-    package = "resolve",
-    "defer_enforce is deprecated in favour of defer_resolve"
-  )
-
-  do.call(
-    on.exit, list(substitute(resolve(...)), add = TRUE),
-    envir = parent.frame() 
-  )
-}
-
 #' Check
 #' 
 #' Checks individual objects.
