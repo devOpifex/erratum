@@ -1,5 +1,6 @@
 test_that("Rules", {
-  err <- e("Problem!")
+  error <- simpleError("Problem!")
+  err <- e(error)
 
   testthat::expect_error(err$rule)
   testthat::expect_s3_class(err$check(), "Error")
