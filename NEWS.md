@@ -1,4 +1,4 @@
-# erratum 2.1.0.9000
+# erratum 2.2.0
 
 - Renamed `jab` to `bash`
 - Remove deprecated `enforce`
