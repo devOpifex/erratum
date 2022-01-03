@@ -12,6 +12,8 @@
 #' uses `warning()`. The function must accept a single argument:
 #' the error message (character vector).
 #' 
+#' @importFrom rlang expr eval_bare
+#' 
 #' @export
 Issue <- R6::R6Class(
   "Issue",
@@ -41,8 +43,8 @@ Issue <- R6::R6Class(
 #' [parent.frame()].
     return = function(n = 1){
       assign("return.issue", self, envir = parent.frame(n))
-      call <- rlang::expr(return(return.issue)) 
-      rlang::eval_bare(call, env = parent.frame(n))
+      call <- expr(return(return.issue)) 
+      eval_bare(call, env = parent.frame(n))
     },
 #' @details Add a rule
 #' @param fn Function defining rule, must accept a single argument
