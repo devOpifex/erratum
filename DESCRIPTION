@@ -1,6 +1,6 @@
 Package: erratum
 Title: Handle Error and Warning Messages
-Version: 2.2.0
+Version: 2.2.0.9000
 Authors@R: 
   c(
     person(given = "John",

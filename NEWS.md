@@ -1,3 +1,7 @@
+# erratum 2.2.0.9000
+
+- Make `raise` argument accessible from constructor.
+
 # erratum 2.2.0
 
 - Renamed `jab` to `bash`

@@ -36,7 +36,7 @@ Error
 \if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Error$new(obj)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Error$new(obj, raiser = getOption("ERR_RAISER_ERROR", stopper))}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -45,7 +45,7 @@ Error
 \item{\code{obj}}{A character string or an object of
 class \code{error}, or \code{warning}.}
 
-\item{\code{type}}{Type of message.}
+\item{\code{raiser}}{Template to raise the issue.}
 }
 \if{html}{\out{</div>}}
 }
