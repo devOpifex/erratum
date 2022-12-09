@@ -2,11 +2,7 @@
 
 ## Stable
 
-Erratum is available on CRAN.
-
-```r
-install.packages("erratum")
-```
+No longer on CRAN, apologies for any inconvenience this may cause.
 
 ## Development
 
