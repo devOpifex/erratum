@@ -14,7 +14,8 @@
 Erratum handles errors and warnings in a manner inspired by Go's standard error library.
 
 ```r
-install.packages("erratum")
+#install.packages("remotes")
+remotes::install_github("devOpifex/erratum")
 ```
 
 ## Example
