@@ -1,14 +1,14 @@
 #' Error
 #' 
 #' @export 
-Error <- R6::R6Class(
+Error <- R6::R6Class( # nolint
   "Error",
   inherit = Issue,
-#' @details Initialise
-#' 
-#' @param obj A character string or an object of 
-#' class `error`, or `warning`.
-#' @param raiser Template to raise the issue.
+  #' @details Initialise
+  #' 
+  #' @param obj A character string or an object of 
+  #' class `error`, or `warning`.
+  #' @param raiser Template to raise the issue.
   public = list(
     initialize = function(
       obj, 
@@ -17,15 +17,15 @@ Error <- R6::R6Class(
       super$initialize(obj, type = "error")
       super$raiser <- raiser
     },
-#' @details Stop
-#' 
-#' Analogous to [stop()]
+    #' @details Stop
+    #' 
+    #' Analogous to [stop()]
     stop = function(){
       super$raise()
     },
-#' @details Fatal
-#' 
-#' Analogous to [stop()]
+    #' @details Fatal
+    #' 
+    #' Analogous to [stop()]
     fatal = function(){
       super$raise()
     }

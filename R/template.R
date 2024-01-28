@@ -20,7 +20,7 @@
 #' 
 #' @name template
 #' @export
-template.e <- function(pat = "%s"){
+template.e <- function(pat = "%s"){ # nolint
   check_tmpl(pat)
   options("ERR_TEMPLATE_ERROR" = pat)
   invisible()
@@ -28,7 +28,7 @@ template.e <- function(pat = "%s"){
 
 #' @rdname template
 #' @export
-template.w <- function(pat = "%s"){
+template.w <- function(pat = "%s"){ # nolint
   check_tmpl(pat)
   options("ERR_TEMPLATE_WARNING" = pat)
   invisible()
@@ -77,20 +77,20 @@ check_tmpl <- function(pat){
 #' 
 #' @name raise
 #' @export 
-raise.e <- function(fn = NULL){
+raise.e <- function(fn = NULL){ # nolint
   options("ERR_RAISER_ERROR" = fn)
   invisible()
 }
 
 #' @rdname raise
 #' @export 
-raise.w <- function(fn = NULL){
+raise.w <- function(fn = NULL){ # nolint
   options("ERR_RAISER_WARNING" = fn)
   invisible()
 }
 
 # Default raise method for Error
-stopper <- function(message){
+stopper <- function(message){ # nolint
   stop(message, call. = FALSE)
 }
 

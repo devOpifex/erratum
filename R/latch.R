@@ -34,7 +34,7 @@
 #' 
 #' @name latch
 #' @export
-latch.e <- function(obj, error){
+latch.e <- function(obj, error){ # nolint
   missing_obj <- e("Missing `obj`")
   missing_error <- e("Missing `error`")
   
@@ -53,7 +53,7 @@ latch.e <- function(obj, error){
 
 #' @rdname latch
 #' @export
-latch.w <- function(obj, warning){
+latch.w <- function(obj, warning){ # nolint
   missing_obj <- e("Missing `obj`")
   missing_warning <- e("Missing `warning`")
   

@@ -27,18 +27,18 @@ the error message (character vector).}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Issue$new()}}
-\item \href{#method-print}{\code{Issue$print()}}
-\item \href{#method-return}{\code{Issue$return()}}
-\item \href{#method-addRule}{\code{Issue$addRule()}}
-\item \href{#method-check}{\code{Issue$check()}}
-\item \href{#method-raise}{\code{Issue$raise()}}
-\item \href{#method-clone}{\code{Issue$clone()}}
+\item \href{#method-Issue-new}{\code{Issue$new()}}
+\item \href{#method-Issue-print}{\code{Issue$print()}}
+\item \href{#method-Issue-return}{\code{Issue$return()}}
+\item \href{#method-Issue-addRule}{\code{Issue$addRule()}}
+\item \href{#method-Issue-check}{\code{Issue$check()}}
+\item \href{#method-Issue-raise}{\code{Issue$raise()}}
+\item \href{#method-Issue-clone}{\code{Issue$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Issue-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$new(obj, type = c("error", "warning"))}\if{html}{\out{</div>}}
@@ -60,8 +60,8 @@ Initialise
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-Issue-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-print}{}}}
 \subsection{Method \code{print()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$print()}\if{html}{\out{</div>}}
@@ -75,8 +75,8 @@ Print message of error or warning.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-return"></a>}}
-\if{latex}{\out{\hypertarget{method-return}{}}}
+\if{html}{\out{<a id="method-Issue-return"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-return}{}}}
 \subsection{Method \code{return()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$return(n = 1)}\if{html}{\out{</div>}}
@@ -97,8 +97,8 @@ Returns self from parent function.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addRule"></a>}}
-\if{latex}{\out{\hypertarget{method-addRule}{}}}
+\if{html}{\out{<a id="method-Issue-addRule"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-addRule}{}}}
 \subsection{Method \code{addRule()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$addRule(fn)}\if{html}{\out{</div>}}
@@ -118,8 +118,8 @@ Add a rule
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-check"></a>}}
-\if{latex}{\out{\hypertarget{method-check}{}}}
+\if{html}{\out{<a id="method-Issue-check"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-check}{}}}
 \subsection{Method \code{check()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$check(obj)}\if{html}{\out{</div>}}
@@ -138,8 +138,8 @@ Add a predicate
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-raise"></a>}}
-\if{latex}{\out{\hypertarget{method-raise}{}}}
+\if{html}{\out{<a id="method-Issue-raise"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-raise}{}}}
 \subsection{Method \code{raise()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Issue$raise(fn = NULL)}\if{html}{\out{</div>}}
@@ -158,8 +158,8 @@ Raise error or warning
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Issue-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Issue-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

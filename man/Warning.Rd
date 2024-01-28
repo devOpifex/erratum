@@ -14,25 +14,25 @@ Error
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Warning$new()}}
-\item \href{#method-warn}{\code{Warning$warn()}}
-\item \href{#method-clone}{\code{Warning$clone()}}
+\item \href{#method-Warning-new}{\code{Warning$new()}}
+\item \href{#method-Warning-warn}{\code{Warning$warn()}}
+\item \href{#method-Warning-clone}{\code{Warning$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="addRule">}\href{../../erratum/html/Issue.html#method-addRule}{\code{erratum::Issue$addRule()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="check">}\href{../../erratum/html/Issue.html#method-check}{\code{erratum::Issue$check()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print">}\href{../../erratum/html/Issue.html#method-print}{\code{erratum::Issue$print()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="raise">}\href{../../erratum/html/Issue.html#method-raise}{\code{erratum::Issue$raise()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="return">}\href{../../erratum/html/Issue.html#method-return}{\code{erratum::Issue$return()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="addRule"><a href='../../erratum/html/Issue.html#method-Issue-addRule'><code>erratum::Issue$addRule()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="check"><a href='../../erratum/html/Issue.html#method-Issue-check'><code>erratum::Issue$check()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print"><a href='../../erratum/html/Issue.html#method-Issue-print'><code>erratum::Issue$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="raise"><a href='../../erratum/html/Issue.html#method-Issue-raise'><code>erratum::Issue$raise()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="return"><a href='../../erratum/html/Issue.html#method-Issue-return'><code>erratum::Issue$return()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Warning-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Warning-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Warning$new(obj, raiser = getOption("ERR_RAISER_WARNING", warner))}\if{html}{\out{</div>}}
@@ -54,8 +54,8 @@ Initialise
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-warn"></a>}}
-\if{latex}{\out{\hypertarget{method-warn}{}}}
+\if{html}{\out{<a id="method-Warning-warn"></a>}}
+\if{latex}{\out{\hypertarget{method-Warning-warn}{}}}
 \subsection{Method \code{warn()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Warning$warn()}\if{html}{\out{</div>}}
@@ -69,8 +69,8 @@ Analogous to \code{\link[=warning]{warning()}}
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Warning-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Warning-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

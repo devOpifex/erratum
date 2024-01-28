@@ -14,26 +14,26 @@ Error
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Error$new()}}
-\item \href{#method-stop}{\code{Error$stop()}}
-\item \href{#method-fatal}{\code{Error$fatal()}}
-\item \href{#method-clone}{\code{Error$clone()}}
+\item \href{#method-Error-new}{\code{Error$new()}}
+\item \href{#method-Error-stop}{\code{Error$stop()}}
+\item \href{#method-Error-fatal}{\code{Error$fatal()}}
+\item \href{#method-Error-clone}{\code{Error$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="addRule">}\href{../../erratum/html/Issue.html#method-addRule}{\code{erratum::Issue$addRule()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="check">}\href{../../erratum/html/Issue.html#method-check}{\code{erratum::Issue$check()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print">}\href{../../erratum/html/Issue.html#method-print}{\code{erratum::Issue$print()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="raise">}\href{../../erratum/html/Issue.html#method-raise}{\code{erratum::Issue$raise()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="return">}\href{../../erratum/html/Issue.html#method-return}{\code{erratum::Issue$return()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="addRule"><a href='../../erratum/html/Issue.html#method-Issue-addRule'><code>erratum::Issue$addRule()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="check"><a href='../../erratum/html/Issue.html#method-Issue-check'><code>erratum::Issue$check()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="print"><a href='../../erratum/html/Issue.html#method-Issue-print'><code>erratum::Issue$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="raise"><a href='../../erratum/html/Issue.html#method-Issue-raise'><code>erratum::Issue$raise()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="erratum" data-topic="Issue" data-id="return"><a href='../../erratum/html/Issue.html#method-Issue-return'><code>erratum::Issue$return()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Error-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Error-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Error$new(obj, raiser = getOption("ERR_RAISER_ERROR", stopper))}\if{html}{\out{</div>}}
@@ -55,8 +55,8 @@ Initialise
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-stop"></a>}}
-\if{latex}{\out{\hypertarget{method-stop}{}}}
+\if{html}{\out{<a id="method-Error-stop"></a>}}
+\if{latex}{\out{\hypertarget{method-Error-stop}{}}}
 \subsection{Method \code{stop()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Error$stop()}\if{html}{\out{</div>}}
@@ -70,8 +70,8 @@ Analogous to \code{\link[=stop]{stop()}}
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-fatal"></a>}}
-\if{latex}{\out{\hypertarget{method-fatal}{}}}
+\if{html}{\out{<a id="method-Error-fatal"></a>}}
+\if{latex}{\out{\hypertarget{method-Error-fatal}{}}}
 \subsection{Method \code{fatal()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Error$fatal()}\if{html}{\out{</div>}}
@@ -85,8 +85,8 @@ Analogous to \code{\link[=stop]{stop()}}
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Error-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Error-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

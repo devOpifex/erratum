@@ -20,7 +20,7 @@
 #' 
 #' @name checks
 #' @export 
-is.e <- function(obj) UseMethod("is.e")
+is.e <- function(obj) UseMethod("is.e") # nolint
 
 #' @rdname checks
 #' @export
@@ -37,7 +37,7 @@ is.e.err <- function(obj){
 
 #' @rdname checks
 #' @export 
-is.w <- function(obj) UseMethod("is.w")
+is.w <- function(obj) UseMethod("is.w") # nolint
 
 #' @rdname checks
 #' @export 
@@ -54,6 +54,6 @@ is.w.err <- function(obj){
 
 #' @rdname checks
 #' @export
-is.problem <- function(obj){
+is.problem <- function(obj){ # nolint
   is.e(obj) || is.w(obj)
 }
