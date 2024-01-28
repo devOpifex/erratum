@@ -263,7 +263,7 @@ You can call `skip` as many times as you want to escalate the error back as much
 
 ## Rules and Checks
 
-When writing code one often themselves writing a lot of conditions to check inputs, outputs, etc. 
+When writing code one often finds oneself writing a lot of conditions to check inputs, outputs, etc. 
 
 Together with an error often comes checks that define when it should be raised. Erratum lets one define those rules (with the `rule` field or `addRule` method), these rules can then be checked with the `check` method. Internally it runs the rules and if any of them does not return `TRUE` raises the error.
 

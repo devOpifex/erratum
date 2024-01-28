@@ -22,6 +22,8 @@ foo <- function(){
   # return the error if results is one
   skip(results)
 
+  results <- results + 1L
+
   return(results)
 }
 
